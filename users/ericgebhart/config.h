@@ -56,6 +56,8 @@
 #define COMBO_HOLD_TERM 150
 #define TAP_CODE_DELAY 5  // for send string with delay
 
+// change the behavior of Mod taps for HRMs.
+#define GLOBAL_QUICK_TAP
 
 /* Control switches for my keymaps. */
 /* if needed, this goes in the keyboard's config.h */

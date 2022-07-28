@@ -33,7 +33,8 @@
            _I, _N, _E,      _A,     TL_COMM,   _M, _H, _T, _S, _R,      \
            _Q, _Z, TL_SLSH, TL_DOT, TL_SCLN,   _B, _F, _G, _V, _X)
 
-/* //APT */
+/* //APT v3*/
+/* https://github.com/Apsu/APT */
 #define CARTE_APT                               \
   carte_de_map("   wgdfb  qluoy",               \
                "   rsthk  jneai; ",             \
