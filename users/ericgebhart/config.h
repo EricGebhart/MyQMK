@@ -156,6 +156,7 @@
 
 // dvorak and relatives
 #define DVORAK_LAYER_ENABLE
+//#define DVORAK_RLC_IU_LAYER_ENABLE
 //#define CAPEWELL_DVORAK_LAYER_ENABLE
 //#define AHEI_LAYER_ENABLE
 //#define BOO_LAYER_ENABLE
@@ -203,6 +204,7 @@
 //#define MTGAP_LAYER_ENABLE
 //#define CTGAP_LAYER_ENABLE
 //#define APT_LAYER_ENABLE
+//#define CANARY_LAYER_ENABLE
 
 // Hands down
 //#define HD_NEU_NARROW_LAYER_ENABLE

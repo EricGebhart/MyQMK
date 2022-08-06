@@ -20,7 +20,7 @@
 /* Reference: MTGAP */
 /* y p o u - | b d l c k j */
 /* i n e a , | m h t s r v */
-/*   ( " ' . _ | ) f w g x */
+/* ( " ' . _ | ) f w g x */
 /*   z */
 
 #define CARTE_MTGAP                             \
@@ -55,3 +55,13 @@
   LANG_MAP(_V, _P, _L, _C, _F,   _K,      _U,      _O,     _Y,      _J, \
            _R, _N, _T, _S, _D,   TL_QUOT, _A,      _E,     _I,      _H, \
            _Z, _B, _M, _G, _W,   _X,      TL_COMM, TL_DOT, TL_SCLN, _Q)
+
+#define CARTE_CANARY                                           \
+  carte_de_map( "  wlypb   zfou'",                                 \
+                "  crstg   mneia",                                 \
+                "  qjvd    kxh/,.")
+
+#define ___CANARY___                                                    \
+  LANG_MAP(_W, _L, _Y, _P, _B, _Z, _F, _O,      _U,      TL_QUOT,       \
+           _C, _R, _S, _T, _G, _M, _N, _E,      _I,      _A,            \
+           _Q, _J, _V, _D, _K, _X, _H, TL_SLSH, TL_COMM, TL_DOT)
