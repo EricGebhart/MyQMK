@@ -20,9 +20,9 @@
 
 // The only 3x12 layout. The rest are 3x10.
 #define CARTE_HD_NEU                            \
-  carte_de_map( "  Nwfmpv  /.q\"'z",            \
-                "  Trsntb  ,aeihj",             \
-                "  Axcldg  -uoykK")
+  carte_de_map( "  wfmpv  /.q\"'z",            \
+                "  rsntb  ,aeihj",             \
+                "  xcldg  -uoykK")
 
 #define ___HD_NEU___                                                    \
   LANG_MAP(_SML_NAV,   _W, _F, _M, _P, _V , TL_SLSH, TL_DOT, _Q, TL_DQUO, TL_QUOT, _Z, \
@@ -66,8 +66,8 @@
 // no z or q, use combos.
 #define CARTE_HD_TITANIUM                       \
   carte_de_map("  jgmpv  ;./\"' ",              \
-               "  rsndb  ,aeih ",               \
-               "  xflcw  -uoyk  r")
+               "  csntw  ,aeih ",               \
+               "  xfldb  -uoyk  r")
 
 #define ___HD_TITANIUM___                                               \
   LANG_MAP(_J, _G, _M, _P, _V,  TL_SCLN, TL_DOT, TL_SLSH, TL_DQUO, TL_QUOT, \
