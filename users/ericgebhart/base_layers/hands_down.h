@@ -76,50 +76,50 @@
 
 
 #define CARTE_HD_GOLD                                           \
-  carte_de_map("  jfmpv  ;./\"' ",                              \
-               "  rsndw  ,aeih ",                               \
-               "  xglcb  -uoyk  t")
+  carte_de_map("  jgmpv  ;./\"' ",                              \
+               "  rsndb  ,aeih ",                               \
+               "  xflcw  -uoyk  t")
 
 #define ___HD_GOLD___                                                   \
-  LANG_MAP(_J, _F, _M, _P, _V,  TL_SCLN, TL_DOT, TL_SLSH, TL_DQUO, TL_QUOT, \
-           _R, _S, _N, _D, _W , TL_COMM, _A, _E, _I, _H,                \
-           _X, _G, _L, _C, _B , TL_MINS, _U, _O, _Y, _K)
+  LANG_MAP(_J, _G, _M, _P, _V,  TL_SCLN, TL_DOT, TL_SLSH, TL_DQUO, TL_QUOT, \
+           _R, _S, _N, _D, _B , TL_COMM, _A, _E, _I, _H,                \
+           _X, _F, _L, _C, _W , TL_MINS, _U, _O, _Y, _K)
 /* t, ␣ */
 
 /* jz pq alt shifts   ;: .& /\* '? "! ,| -+ */
 
 #define CARTE_HD_PLATINUM                       \
-  carte_de_map( "jfmpv   ;./'\"",               \
-                "rsntk   ,aeic",                \
-                "xghdb   -uoyw  l")
+  carte_de_map( "jghpv   ;./'\"",               \
+                "rsntb   ,aeic",                \
+                "xfmdk   -uowy  l")
 /* l   ␣   */
 
 #define ___HD_PLATINUM___                                               \
-  LANG_MAP(_J, _F, _M, _P, _V,  TL_SCLN, TL_DOT, TL_SLSH, TL_QUOT, TL_DQUO, \
-           _R, _S, _N, _T, _K,  TL_COMM, _A, _E, _I, _C,                \
-           _X, _G, _H, _D, _B,  TL_MINS, _U, _O, _Y, _W)
+  LANG_MAP(_J, _G, _H, _P, _V,  TL_SCLN, TL_DOT, TL_SLSH, TL_QUOT, TL_DQUO, \
+           _R, _S, _N, _T, _B,  TL_COMM, _A, _E, _I, _C,                \
+           _X, _F, _M, _D, _K,  TL_MINS, _U, _O, _W, _Y)
 
 #define CARTE_HD_SILVER                         \
-  carte_de_map("jfmpw   ;./'\"",                \
+  carte_de_map("jgmpv   ;./'\"",                \
                "rshtb   ,aeic",                 \
-               "xgldk   -uoyv  n")
+               "xfldk   -uowy  n")
 /* n   ␣   */
 
 #define ___HD_SILVER___                                 \
-  LANG_MAP(_J, _F, _M, _P, _W,  TL_SCLN, TL_DOT, TL_SLSH, TL_QUOT, TL_DQUO, \
+  LANG_MAP(_J, _G, _M, _P, _V,  TL_SCLN, TL_DOT, TL_SLSH, TL_QUOT, TL_DQUO, \
            _R, _S, _H, _T, _B,  TL_COMM, _A, _E, _I, _C,                \
-           _X, _G, _L, _D, _K,  TL_MINS, _U, _O, _Y, _V)
+           _X, _F, _L, _D, _K,  TL_MINS, _U, _O, _W, _Y)
 
 #define CARTE_HD_BRONZE                         \
-  carte_de_map("jfmpw   ;./'\"",                \
-               "rsntk   ,aeic",                 \
-               "xgldb   -uowy  h")
+  carte_de_map("jgmpv   ;./'\"",                \
+               "rsntb   ,aeic",                 \
+               "xfldk   -uowy  h")
 /* h   ␣   */
 
 #define ___HD_BRONZE___                                 \
-  LANG_MAP(_J, _F , _M, _P, _W , TL_SCLN, TL_DOT, TL_SLSH , TL_QUOT, TL_DQUO, \
-           _R, _S, _N, _T, _K , TL_COMM, _A, _E, _I, _C,                \
-           _X, _G, _L, _D, _B , TL_MINS, _U, _O, _W, _Y)
+  LANG_MAP(_J, _G , _M, _P, _V , TL_SCLN, TL_DOT, TL_SLSH , TL_QUOT, TL_DQUO, \
+           _R, _S, _N, _T, _B , TL_COMM, _A, _E, _I, _C,                \
+           _X, _F, _L, _D, _K , TL_MINS, _U, _O, _W, _Y)
 
 #define CARTE_HD_ELAN                          \
   carte_de_map("vghpk   /({'\"",               \
