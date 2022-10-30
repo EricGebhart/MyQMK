@@ -18,6 +18,7 @@ SRC += $(USER_PATH)/extensions/send_string.c
 SRC += $(USER_PATH)/extensions/console_key_logger.c
 SRC += $(USER_PATH)/extensions/not_dead.c
 SRC += $(USER_PATH)/extensions/alt_shift.c
+SRC += $(USER_PATH)/extensions/quick_tap.c
 SRC += $(USER_PATH)/oled/oled_stuff.c
 SRC += $(USER_PATH)/oled/oled_cartes.c
 SRC += $(USER_PATH)/oled/oled_layers.c

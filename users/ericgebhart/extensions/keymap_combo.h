@@ -16,7 +16,6 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 // Keymap helpers
-bool process_global_quick_tap(uint16_t keycode, keyrecord_t *record);
 void process_combo_event(uint16_t combo_index, bool pressed);
 
 

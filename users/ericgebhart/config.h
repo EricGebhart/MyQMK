@@ -57,11 +57,11 @@
 #define TAP_CODE_DELAY 5  // for send string with delay
 
 // change the behavior of Mod taps for HRMs.
-#define GLOBAL_QUICK_TAP
+// #define GLOBAL_QUICK_TAP
 
-/* Control switches for my keymaps. */
-/* if needed, this goes in the keyboard's config.h */
-/* Alternately, fix the number row in the layout template. */
+ /* Control switches for my keymaps. */
+ /* if needed, this goes in the keyboard's config.h */
+ /* Alternately, fix the number row in the layout template. */
 /* #define BASE_NUMBER_ROW    // turn on 4 row base templates. */
 
 // Extensions, turn them on and off.
@@ -207,7 +207,7 @@
 //#define CANARY_LAYER_ENABLE
 
 // Hands down
-//#define HD_NEU_NARROW_LAYER_ENABLE
+#define HD_NEU_NARROW_LAYER_ENABLE
 //#define HD_REF_LAYER_ENABLE
 //#define HD_DASH_LAYER_ENABLE
 //#define HD_ELAN_LAYER_ENABLE
