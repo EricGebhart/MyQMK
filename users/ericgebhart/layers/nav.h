@@ -22,6 +22,8 @@
 /********************************************************************************/
 /*                                                                              */
 /* Navigation layer with optional 4th Row....                                   */
+/* Optional edge columns.                                                       */
+/*                                                                              */
 /*                                                                              */
 /* M = Mouse                                                                    */
 /* B = Button                                                                   */
@@ -30,12 +32,24 @@
 /* CCCV = Tap -> Ctrl-C, hold for double tap duration -> Ctrl-V                 */
 /* CTCN = Tap -> Ctrl-T, hold for double tap duration -> Ctrl-N                 */
 /* CWCQ = Tap -> Ctrl-W, hold for double tap duration -> Ctrl-Q                 */
-/* HOME = TAB & PGDN                                                            */
-/* END =  BKTAB & PGUP -- See combos.                                           */
+/* replaced CWCQ with KC_DOT in NAVA - 22-11-2022                               */
+/*  Dot is the repeat key in vi (vi keybindings)                                */
 /*                                                                              */
-/* MB5  MB4    MB3    MB2  MB1     MAC0  |  CTCN  MB1    MB2    MB3  MB4   MB5 */
-/* TAB  MLeft  MDown  MUp  MRight  MAC1  |  CCCV  Left   Down   UP   Right TAB */
-/*      WLeft  WDown  WUp  WRight  MAC2  |  CWCQ  TAB    PGDN   PGUP BKTAB       */
+/* NAVA traded home and end for tab and backtab, combos fix that.               */
+/* Combos: see combos.def                                                       */
+/* HOME = TAB & PGDN                                                            */
+/* END =  BKTAB & PGUP                                                          */
+/*                                                                              */
+/* NAVA also has lock mods on the top row mouse side                            */
+/* MB5  GUI    ALT    CTRL SFT     MAC0  |  CTCN  MB1    MB2    MB3  MB4   MB5  */
+/*                                                                              */
+/* MB5  MB4    MB3    MB2  MB1     MAC0  |  CTCN  MB1    MB2    MB3  MB4   MB5  */
+/* TAB  MLeft  MDown  MUp  MRight  MAC1  |  CCCV  Left   Down   UP   Right TAB  */
+/*      WLeft  WDown  WUp  WRight  MAC2  |  CWCQ  HOME   PGDN   PGUP END        */
+/*                                                                              */
+/*      WLeft  WDown  WUp  WRight  MAC2  |  CWCQ  TAB    PGDN   PGUP BKTAB      */
+/*                                                                              */
+/*      WLeft  WDown  WUp  WRight  MAC2  |  DOT   TAB    PGDN   PGUP BKTAB      */
 /*                                                                              */
 /*      Left   Down   Up   Right   CCCV  |  CCCV   MLeft  MDown  MUp  MRight    */
 /*                                                                              */
@@ -86,8 +100,8 @@
 #endif // end mousekey
 
 #define ___NAV_R_2___  KC_CCCV, ___VI_ARROWS___
-#define ___NAV_R_3___  KC_CWCQ, ___HOME_PGDN_PGUP_END___
-#define ___NAV_Ra_3___ KC_CWCQ, ___TAB_PGDN_PGUP_BKTAB___
+#define ___NAV_R_3___  KC_CWCQ,  ___HOME_PGDN_PGUP_END___
+#define ___NAV_Ra_3___ KC_DOT,  ___TAB_PGDN_PGUP_BKTAB___
 
 #ifdef MOUSEKEY_ENABLE
 
@@ -149,23 +163,22 @@
 #define CARTE_NAV                               \
   carte_de_map("54321 0  ctn 12345",            \
                " ldur 1  ccv ldur",             \
-               " ldur 2  cwq tdubt")
+               " ldur 2   .  tdubt")
 
 #define CARTE_NAVA                              \
   carte_de_map(" gacs 0  ctn 12345",             \
                " ldur 1  ccv ldur",              \
-               " ldur 2  cwq tdubt")
+               " ldur 2   .  tdubt")
 
 #define CARTE_NAVnm                             \
   carte_de_map(" gacsc2 ctn cscag ",            \
                " gacs   ccv ldur",              \
-               " __M_   cwq tdubt")
+               " __M_   cwq HDUE")
 
-// currently the same as NAVA
 #define CARTE_NAVm                                 \
   carte_de_map(" gacs 0  ctn 12345",               \
                " ldur 1  ccv ldur",                \
-               " ldur 2  cwq tdubt")
+               " ldur 2  cwq HDUE")
 
 #define CARTE_NAV_miryoku                       \
   carte_de_map("  rdo  ccp undo",               \
