@@ -70,6 +70,21 @@ void oled_render_default_layer_state(void) {
 #ifdef MINIMAK_12_LAYER_ENABLE
       WRITE_STR_LAYER(_MINIMAK_12, "Minimak 12")
 #endif
+#ifdef SEMIMAK_JQ_LAYER_ENABLE
+      WRITE_STR_LAYER(_SEMIMAK_JQ, "Semimak JQ")
+#endif
+#ifdef SEMIMAK_LAYER_ENABLE
+      WRITE_STR_LAYER(_SEMIMAK, "Semimak")
+#endif
+#ifdef APTMAK_LAYER_ENABLE
+      WRITE_STR_LAYER(_APTMAK, "Aptmak")
+#endif
+#ifdef APTMAK_30_LAYER_ENABLE
+      WRITE_STR_LAYER(_APTMAK_30, "Aptmak_30")
+#endif
+#ifdef APTMAK__ALT_LAYER_ENABLE
+      WRITE_STR_LAYER(_APTMAK_ALT, "Aptmak_alt")
+#endif
 
 #ifdef BEAKL15_LAYER_ENABLE
       WRITE_STR_LAYER(_BEAKL15, "Beakl")
@@ -104,6 +119,15 @@ void oled_render_default_layer_state(void) {
 #endif
 #ifdef HD_TITANIUM_LAYER_ENABLE
       WRITE_STR_LAYER(_HD_TITANIUM, "HD Titanium")
+#endif
+#ifdef HD_VROOMY_LAYER_ENABLE
+      WRITE_STR_LAYER(_HD_VROOMY, "HD VROOMY")
+#endif
+#ifdef HD_RHODIUM_LAYER_ENABLE
+      WRITE_STR_LAYER(_HD_RHODIUM, "HD RHODIUM")
+#endif
+#ifdef HD_RHODIUMB_LAYER_ENABLE
+      WRITE_STR_LAYER(_HD_RHODIUMB, "HD RHODIUMB")
 #endif
 #ifdef HD_GOLD_LAYER_ENABLE
       WRITE_STR_LAYER(_HD_GOLD, "HD Gold")

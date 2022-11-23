@@ -60,6 +60,21 @@
 #ifdef MINIMAK_12_LAYER_ENABLE
       LANG_N(_MINIMAK_12),
 #endif
+#ifdef SEMIMAK_JQ_LAYER_ENABLE
+      LANG_N(_SEMIMAK_JQ),
+#endif
+#ifdef SEMIMAK_LAYER_ENABLE
+      LANG_N(_SEMIMAK),
+#endif
+#ifdef APTMAK_LAYER_ENABLE
+      LANG_N(_APTMAK),
+#endif
+#ifdef APTMAK_30_LAYER_ENABLE
+      LANG_N(_APTMAK_30),
+#endif
+#ifdef APTMAK_ALT_LAYER_ENABLE
+      LANG_N(_APTMAK_ALT),
+#endif
 
 
 #ifdef BEAKL15_LAYER_ENABLE
@@ -139,6 +154,18 @@
 #endif
 #ifdef HD_NEU_NARROW_LAYER_ENABLE
         LANG_N(_HD_NEU_NARROW),
+#endif
+#ifdef HD_VROOMY_LAYER_ENABLE
+      LANG_N(_HD_VROOMY),
+#endif
+#ifdef HD_RHODIUMB_LAYER_ENABLE
+      LANG_N(_HD_RHODIUMB),
+#endif
+#ifdef HD_RHODIUM_LAYER_ENABLE
+      LANG_N(_HD_RHODIUM),
+#endif
+#ifdef HD_TITANIUM_LAYER_ENABLE
+      LANG_N(_HD_TITANIUM),
 #endif
 #ifdef HD_GOLD_LAYER_ENABLE
         LANG_N(_HD_GOLD),
