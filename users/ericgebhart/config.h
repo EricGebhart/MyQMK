@@ -105,6 +105,7 @@
 #define HANDS_DOWN_LTR_THUMBS_ARE TH_LTR
 #define MALTRON_LTR_THUMBS_ARE TH_LTR
 #define RSTHD_LTR_THUMBS_ARE TH_LTR
+#define APTMAK_LTR_THUMBS_ARE TH_LTR
 
 // layout io, matrix size.
 // a reasonable default for most keyboards.
@@ -174,6 +175,11 @@
 //#define MINIMAK_LAYER_ENABLE
 //#define MINIMAK_8_LAYER_ENABLE
 //#define MINIMAK_12_LAYER_ENABLE
+//#define SEMIMAK_JQ_LAYER_ENABLE
+//#define SEMIMAK_LAYER_ENABLE
+//#define APTMAK_LAYER_ENABLE
+//#define APTMAK_30_LAYER_ENABLE
+//#define APTMAK_ALT_LAYER_ENABLE
 
 // BEAKL
 // #define BEAKL15_LAYER_ENABLE
@@ -216,6 +222,9 @@
 //#define HD_PLATINUM_LAYER_ENABLE
 //#define HD_GOLD_LAYER_ENABLE
 //#define HD_TITANIUM_LAYER_ENABLE
+//#define HD_RHODIUM_LAYER_ENABLE
+//#define HD_RHODIUMB_LAYER_ENABLE
+//#define HD_VROOMY_LAYER_ENABLE
 
 // A compact optimot for 3x10.
 // requires accent characters.
@@ -305,8 +314,9 @@
 //#define SYMBOL_BEAKL         // original - the default if nothing else.
 //#define SYMBOL_BEAKL_EXT     // extended for non beakl base layers.
 //#define SYMBOL_BEAKL_EXT_VI  // extended with vi keybinding in mind.
-#define SYMBOL_BEAKL_C         // more alterations by frequency
-// #define SYMBOL_NEO             // The symbol layer from the Neo layout.
+//#define SYMBOL_BEAKL_C        // more alterations by frequency
+#define SYMBOL_D               // combos for closing )]}
+// #define SYMBOL_NEO          // The symbol layer from the Neo layout.
 // #define SYMBOL_MIRYOKU      // minimalist symbols after miryoku
 //#define SYMBOL_BEAKL_WI      // original wi
 
