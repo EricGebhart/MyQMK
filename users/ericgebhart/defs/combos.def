@@ -4,6 +4,8 @@
 
 //COMBO_REF_LAYER(_DVORAK_BP, _COMBO_REF2)
 COMBO_REF_LAYER(_NAV, _NAV)
+COMBO_REF_LAYER(_SYMB_EN, _SYMB_EN)
+DEFAULT_REF_LAYER(_COMBO_REF)
 
 
 // COMBOS
@@ -13,6 +15,7 @@ COMBO_REF_LAYER(_NAV, _NAV)
 // home, end, caps word, accents? -> aeeecio oe, ao,
 
 
+// Row 1
 // reference COMBO_REF
 COMB(TSCTL,      TS_LCTL,       CB_1L3, CB_1L4)
 COMB(SMLNAV1,    SML_NAV,       CB_1L2, CB_1L3)
@@ -22,17 +25,33 @@ COMB(OSACCENTMT, SML_KEYPAD,    CB_1L2, CB_1R4)
 COMB(OSTOPROWS,  SML_TOPROWS,   CB_1L3, CB_1R3)
 #endif
 
-//COMB(OSlsftT,    OS_LSFT,       CB_1L4, CB_1R2)
-COMB(OSSFT,      OS_LSFT,        CB_2L4, CB_2R2)
-COMB(TSCTL2,     TS_LCTL,       CB_1L4, CB_1R2)
+// 2 shot ctrl
+COMB(TSCTL2,     TS_LCTL,        CB_1L4, CB_1R2)
 
-// COMB(SMLNAV,  SML_NAV,        CB_2L4, CB_2R2)
+// Row 2 - homerow.
+// COMB(SMLNAV,     SML_NAV,        CB_2L2, CB_2R3)
+
+// left: index - right: sft, gui, enter    - index, middle, ring
+// right: index - left: escape, backspace  - middle, ring.
+COMB(OSSFT,      OS_LSFT,        CB_2L4, CB_2R2)
+COMB(OSGUI,      OS_LGUI,        CB_2L4, CB_2R3)
+COMB(CENTER,     KC_ENTER,       CB_2L4, CB_2R4)
+COMB(CESC,       KC_ESC,         CB_2L3, CB_2R2)
+COMB(CBKSP,      KC_BSPC,        CB_2L2, CB_2R2)
+
+// ring/ring
 COMB(OSCTL,      OS_LCTL,        CB_2L2, CB_2R4)
 
+// middle/middle
 COMB(OSACCENTM, OSL_ACCENTS_MORTE,  CB_2L3, CB_2R3)
 
+// Row 3
+index/index
 COMB(capsword,  CAPS_WORD,      CB_3L4, CB_3R2)
+
+// middle/middle
 COMB(OSRALT,    OS_RALT,        CB_3L3, CB_3R3)
+// ring/ring
 COMB(OSLALT2,   OS_LALT,        CB_3L2, CB_3R4)
 
 COMB(OSLAYER,   LAYER_OSL,      CB_3L1, CB_3R5)
@@ -50,9 +69,8 @@ COMB(_Z,  KC_Z, CB_3R3, CB_3R4)
 COMB(SMLMEDIA,      SML_MEDIA,            CB_TH3, CB_0TH2)
 #endif
 
-COMB(OSLACCENT2,    OSL_ACCENTS_MORTE,        CB_TH4, CB_0TH3)
+// COMB(OSLACCENT2,    OSL_ACCENTS_MORTE,        CB_TH4, CB_0TH3)
 COMB(KEYPAD,   SML_KEYPAD,     CB_TH5, CB_0TH4)
-
 
 
 // reference COMBO_REF2
@@ -85,6 +103,11 @@ COMB(_Zbp,  BP_Z, CB2_3R3, CB2_3R4)
 // Reference nav layer
 COMB(END_nav,   KC_END,  KC_PGUP, KC_PGDN)
 COMB(HOME_nav,  KC_HOME, KC_UP,   KC_DOWN)
+
+// should be somehow wrapped with LANG ?
+COMB(paren_sym, US_RPRN, US_OCDQUO, US_HASH)
+COMB(brack_sym, US_RBRC, US_QUES, US_UNDS)
+COMB(brace_sym, US_RCBR, US_MINS, US_COLN)
 
 
 //COMB(JKL_SPC,  KC_SPC,   KC_J,  KC_X)
