@@ -16,6 +16,7 @@
 */
 #undef ALT_TARGET_IS
 #define ALT_TARGET_IS HD
+// this is to define the punctuation keys.  TL_<?>
 // NONE, DV = dvorak, BK=Beakl, BKW=Beaklwi, HD=Hands down.
 // HD_ELAN,
 
@@ -29,6 +30,39 @@ B_LAYERt6(LANG_N(_HD_NEU), ___12_NUMBERS___, ___HD_NEU___),
 
 #ifdef HD_REF_LAYER_ENABLE
   B_LAYER(LANG_N(_HD_REF), ___10_NUMBERS___, ___HD_REF___),
+#endif
+
+#ifdef HD_VROOMY_LAYER_ENABLE
+#undef THUMBS_ARE
+#define THUMBS_ARE HANDS_DOWN_LTR_THUMBS_ARE
+#undef THUMB_LETTER
+#define THUMB_LETTER LANG_KC(_R)
+  B_LAYER(LANG_N(_HD_VROOMY), ___10_NUMBERS___, ___HD_VROOMY___),
+#undef THUMBS_ARE
+#define THUMBS_ARE DEFAULT_THUMBS
+#undef THUMB_LETTER
+#endif
+
+#ifdef HD_RHODIUM_LAYER_ENABLE
+#undef THUMBS_ARE
+#define THUMBS_ARE HANDS_DOWN_LTR_THUMBS_ARE
+#undef THUMB_LETTER
+#define THUMB_LETTER LANG_KC(_R)
+  B_LAYER(LANG_N(_HD_RHODIUM), ___10_NUMBERS___, ___HD_RHODIUM___),
+#undef THUMBS_ARE
+#define THUMBS_ARE DEFAULT_THUMBS
+#undef THUMB_LETTER
+#endif
+
+#ifdef HD_RHODIUMB_LAYER_ENABLE
+#undef THUMBS_ARE
+#define THUMBS_ARE HANDS_DOWN_LTR_THUMBS_ARE
+#undef THUMB_LETTER
+#define THUMB_LETTER LANG_KC(_R)
+  B_LAYER(LANG_N(_HD_RHODIUMB), ___10_NUMBERS___, ___HD_RHODIUMB___),
+#undef THUMBS_ARE
+#define THUMBS_ARE DEFAULT_THUMBS
+#undef THUMB_LETTER
 #endif
 
 #ifdef HD_TITANIUM_LAYER_ENABLE
