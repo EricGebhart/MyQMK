@@ -75,6 +75,36 @@
            _X, _F, _L, _D, _B , TL_MINS, _U, _O, _Y, _K)
 
 
+#define CARTE_HD_RHODIUM                        \
+  carte_de_map("  bjhgx  ;./\"' ",              \
+               "  csntk  ,aeim ",               \
+               "  pfldv  -uoyw  r")
+
+#define ___HD_RHODIUM___                                                \
+  LANG_MAP(_W, _V, _M, _G, _EQL,  TL_SCLN, TL_DOT, TL_SLSH, TL_DQUO, TL_QUOT, \
+           _C, _S, _N, _T, _K ,   TL_COMM, _A, _E, _I, _M,              \
+           _P, _F, _L, _D, _X ,   TL_MINS, _U, _O, _Y, _W)
+
+#define CARTE_HD_RHODIUMB                       \
+  carte_de_map("  wvmg=  ;./j' ",               \
+               "  csntk  ,aeih ",               \
+               "  pfldx  -uoyb  r")
+
+#define ___HD_RHODIUMB___                                               \
+  LANG_MAP(_W, _V, _M, _G, _EQL,  TL_SCLN, TL_DOT, TL_SLSH, _J, TL_QUOT, \
+           _C, _S, _N, _T, _K ,   TL_COMM, _A, _E, _I, _H,              \
+           _P, _F, _L, _D, _X ,   TL_MINS, _U, _O, _Y, _B)
+
+#define CARTE_HD_VROOMY                         \
+  carte_de_map("  xflb'  ;.=jv ",               \
+               "  csndk  ,aeir ",               \
+               "  wghp/  -uoym  t")
+
+#define ___HD_VROOMY___                                                 \
+  LANG_MAP(_X, _F, _L, _B, TL_QUOT,  TL_SCLN, TL_DOT, _EQL, _J, _V,     \
+           _C, _S, _N, _D, _K,       TL_COMM, _A, _E, _I, _H,           \
+           _W, _G, _H, _P, TL_SLSH,  TL_MINS, _U, _O, _Y, _B)
+
 #define CARTE_HD_GOLD                                           \
   carte_de_map("  jgmpv  ;./\"' ",                              \
                "  rsndb  ,aeih ",                               \
