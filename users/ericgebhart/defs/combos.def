@@ -15,8 +15,14 @@ DEFAULT_REF_LAYER(_COMBO_REF)
 // home, end, caps word, accents? -> aeeecio oe, ao,
 
 
-// Row 1
 // reference COMBO_REF
+// I don't rememember why I decided to not mirror the sides. :-/
+// for now, the columns are
+// Left                               Right
+// pinky, ring, middle, index, inner, inner, index, middle, ring, pinky.
+//   1      2      3      4      5      1      2       3      4     5
+
+// Row 1
 COMB(TSCTL,      TS_LCTL,       CB_1L3, CB_1L4)
 COMB(SMLNAV1,    SML_NAV,       CB_1L2, CB_1L3)
 COMB(OSACCENTMT, SML_KEYPAD,    CB_1L2, CB_1R4)
@@ -26,18 +32,22 @@ COMB(OSTOPROWS,  SML_TOPROWS,   CB_1L3, CB_1R3)
 #endif
 
 // 2 shot ctrl
-COMB(TSCTL2,     TS_LCTL,        CB_1L4, CB_1R2)
+// COMB(TSCTL2,     TS_LCTL,        CB_1L4, CB_1R2)
 
 // Row 2 - homerow.
 // COMB(SMLNAV,     SML_NAV,        CB_2L2, CB_2R3)
 
-// left: index - right: sft, gui, enter    - index, middle, ring
-// right: index - left: escape, backspace  - middle, ring.
+// left: index + :
+// right: index, middle, ring - sft, gui, enter
+// right index + :
+// left: index, middle, ring  - sft, escape, backspace
+// left: middle - right: ring - tab
 COMB(OSSFT,      OS_LSFT,        CB_2L4, CB_2R2)
 COMB(OSGUI,      OS_LGUI,        CB_2L4, CB_2R3)
 COMB(CENTER,     KC_ENTER,       CB_2L4, CB_2R4)
 COMB(CESC,       KC_ESC,         CB_2L3, CB_2R2)
 COMB(CBKSP,      KC_BSPC,        CB_2L2, CB_2R2)
+COMB(CTAB,       KC_TAB,         CB_2L3, CB_2R4)
 
 // ring/ring
 COMB(OSCTL,      OS_LCTL,        CB_2L2, CB_2R4)
@@ -46,7 +56,7 @@ COMB(OSCTL,      OS_LCTL,        CB_2L2, CB_2R4)
 COMB(OSACCENTM, OSL_ACCENTS_MORTE,  CB_2L3, CB_2R3)
 
 // Row 3
-index/index
+// index/index
 COMB(capsword,  CAPS_WORD,      CB_3L4, CB_3R2)
 
 // middle/middle
