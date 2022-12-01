@@ -83,7 +83,7 @@
 
 // Choose a mod layer. Can be changed per layer.
 // TRNS, ALT, HRS_NAV HRM_GACS, HRM_SCAG, HRM_GASC, MIRYOKU_HRM_GASC
-#define MODS_ARE HRS_NAV
+#define MODS_ARE TRNS
 #define DEFAULT_MODS MODS_ARE
 
 // Choose a thumb cluster.
@@ -322,12 +322,15 @@
 
 
 /* toprows. */
-// The default, if not defined, is a standard qwerty set of rows.
+// The default, if not defined, is RAISE, a standard qwerty set of rows.
 // symbols, numbers, function keys. Numbers on the home row.
 
-// #define TOPROWS_BKL_15_NUMS  // center row with Beakl15 order. 40123 76598.
-// #define TOPROWS_BKL_19_NUMS // Beakl 19 order: 32104  76598
+// top rows are all standard qwerty symbol row.
+// bottom rows are either F-keys or lock and one shot mods.
+// #define TOPROWS_BKL_15  // center row with Beakl15 order. 40123 76598.
+// #define TOPROWS_BKL_19 // Beakl 19 order: 32104  76598
+// #define TOPROWS_JOHNM_MOD //  84236 71059
+// #define TOPROWS_JOHNM2_MOD //  85236 71049
 #define TOPROWS_MOD  // beakl 15 nums, oneshot and smart lock mods. no Fkeys.
-
 
 #endif
