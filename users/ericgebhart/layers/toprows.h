@@ -39,12 +39,12 @@
 /********************************************************************************/
 // These rows have already been langed, at their creation.
 // altogether in a chunk.
-#define CARTE_TOPROWS                           \
+#define CARTE_TOPROWS_BKL15                     \
   carte_de_map("   !@#$%  ^&*()",               \
                "   40123  76598",               \
                " F1-    --    -F12")
 
-#define ___TOPROWS_3x10___                      \
+#define ___TOPROWS_BKL15_3x10___               \
   ___10_SYMBOLS___,                             \
     ___10_NUMBERS_BEAKL15___,                   \
     ___10_FUNCS___
@@ -57,6 +57,26 @@
 #define ___TOPROWS_MOD_3x10___                  \
   ___10_SYMBOLS___,                             \
     ___10_NUMBERS_BEAKL15___,                   \
+    ___MODS_ROW___
+
+#define CARTE_TOPROWS_JOHNM_MOD                 \
+  carte_de_map("   !@#$%  ^&*()",               \
+               "   84236  71059",               \
+               "  SLMods  OSMods")
+
+#define ___TOPROWS_JOHNM_MOD_3x10___            \
+  ___10_SYMBOLS___,                             \
+    ___10_NUMBERS_JOHNM___,                     \
+    ___MODS_ROW___
+
+#define CARTE_TOPROWS_JOHNM2_MOD                \
+  carte_de_map("   !@#$%  ^&*()",               \
+               "   65238  91047",               \
+               "  SLMods  OSMods")
+
+#define ___TOPROWS_JOHNM2_MOD_3x10___           \
+  ___10_SYMBOLS___,                             \
+    ___10_NUMBERS_JOHNM2___,                    \
     ___MODS_ROW___
 
 #define CARTE_TOPROWS_BKL19                     \
