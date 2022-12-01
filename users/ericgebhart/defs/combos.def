@@ -18,7 +18,8 @@ DEFAULT_REF_LAYER(_COMBO_REF)
 // reference COMBO_REF
 // I don't rememember why I decided to not mirror the sides. :-/
 
-// columns are
+// for now, the columns are
+
 // Left                               Right
 // pinky, ring, middle, index, inner, inner, index, middle, ring, pinky.
 //   1      2      3      4      5      1      2       3      4     5
@@ -60,7 +61,6 @@ COMB(OSCTL,      OS_LCTL,        CB_2L2, CB_2R4)
 COMB(SMLNAV,     SML_NAV,        CB_2L3, CB_2R3)
 
 // Row 3
-
 // index/index
 COMB(capsword,  CAPS_WORD,      CB_3L4, CB_3R2)
 
