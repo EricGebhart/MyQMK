@@ -227,19 +227,31 @@ void oled_render_layer_map(void) {
     switch (lyr) {
 #ifdef TOPROWS_LAYER_ENABLE
       LCASE(_TOPROWS)
-#  ifdef TOPROWS_BKL_NUMS
 #    ifdef TOPROWS_MOD
         CARTE_TOPROWS_MOD
 #    else
-#      ifdef TOPROWS_BKL_19_NUMS
-        CARTE_TOPROWS_BKL19
+#      ifdef TOPROWS_BKL_15
+        CARTE_TOPROWS_BKL15
 #      else
+#        ifdef TOPROWS_BKL_19
+        CARTE_TOPROWS_BKL19
+#        else
+#          ifdef TOPROWS
         CARTE_TOPROWS
+#          else
+#            ifdef TOPROWS_JOHNM_MOD
+        CARTE_TOPROWS_JOHNM_MOD
+#            else
+#              ifdef TOPROWS_JOHNM2_MOD
+        CARTE_TOPROWS_JOHNM2_MOD
+#              else
+        CARTE_RAISE
+#              endif
+#            endif
+#          endif
+#        endif
 #      endif
 #    endif
-#  else // not beakl nums.
-        CARTE_RAISE
-#  endif
         break;
 #endif
 
