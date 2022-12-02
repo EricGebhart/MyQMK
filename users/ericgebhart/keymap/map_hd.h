@@ -28,6 +28,10 @@ B_LAYERt6(LANG_N(_HD_NEU), ___12_NUMBERS___, ___HD_NEU___),
   B_LAYER(LANG_N(_HD_NEU_NARROW), ___10_NUMBERS___, ___HD_NEU_NARROW___),
 #endif
 
+#ifdef HD_NEU_NARROW_M_LAYER_ENABLE
+  B_LAYER(LANG_N(_HD_NEU_NARROW_M), ___10_NUMBERS___, ___HD_NEU_NARROW_M___),
+#endif
+
 #ifdef HD_REF_LAYER_ENABLE
   B_LAYER(LANG_N(_HD_REF), ___10_NUMBERS___, ___HD_REF___),
 #endif

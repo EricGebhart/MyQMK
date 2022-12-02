@@ -37,12 +37,12 @@
 /* https://github.com/Apsu/APT */
 #define CARTE_APT                               \
   carte_de_map("   wgdfb  qluoy",               \
-               "   rsthk  jneai; ",             \
+               "   rsthk  jneai ",             \
                "   xcmpv  z,.'/")
 
 #define ___APT___                                                       \
   LANG_MAP(_W, _G, _D, _F, _B,    _Q, _L, _U, _O, _Y,                   \
-           _R, _S, _T, _H, _K,    _J, _N, _E, _A, _I, TL_SCLN,          \
+           _R, _S, _T, _H, _K,    _J, _N, _E, _A, _I,           \
            _X, _C, _M, _P, _V,    _Z, TL_COMM, TL_DOT, TL_QUOT, TL_SLSH)
 
 
@@ -59,7 +59,7 @@
 #define CARTE_CANARY                                           \
   carte_de_map( "  wlypb   zfou'",                                 \
                 "  crstg   mneia",                                 \
-                "  qjvd    kxh/,.")
+                "  qjvdk   xh/,.")
 
 #define ___CANARY___                                                    \
   LANG_MAP(_W, _L, _Y, _P, _B, _Z, _F, _O,      _U,      TL_QUOT,       \

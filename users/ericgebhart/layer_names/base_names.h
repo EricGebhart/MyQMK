@@ -86,8 +86,17 @@
 #ifdef BEAKL27_LAYER_ENABLE
       LANG_N(_BEAKL27),
 #endif
+#ifdef BEAKL27a_LAYER_ENABLE
+      LANG_N(_BEAKL27a),
+#endif
 #ifdef BEAKLWI_LAYER_ENABLE
       LANG_N(_BEAKLWI),
+#endif
+#ifdef BEAKLWIa_LAYER_ENABLE
+      LANG_N(_BEAKLWIa),
+#endif
+#ifdef BEAKLWIb_LAYER_ENABLE
+      LANG_N(_BEAKLWIb),
 #endif
 
 #ifdef MALTRON_LAYER_ENABLE
@@ -153,7 +162,10 @@
         LANG_N(_HD_NEU),
 #endif
 #ifdef HD_NEU_NARROW_LAYER_ENABLE
-        LANG_N(_HD_NEU_NARROW),
+      LANG_N(_HD_NEU_NARROW),
+#endif
+#ifdef HD_NEU_NARROW_M_LAYER_ENABLE
+      LANG_N(_HD_NEU_NARROW_M),
 #endif
 #ifdef HD_VROOMY_LAYER_ENABLE
       LANG_N(_HD_VROOMY),

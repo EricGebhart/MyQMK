@@ -51,13 +51,26 @@
                " j\",k' wflpv ")
 
 // Alt target is BK
+// altered shifted pairs: quot = '`  comma = ,!   dot = .@
 #define ___BEAKL27___                                                   \
   LANG_MAP(_Q, _H,      _O,      _U, _X,      _G, _C, _M, _R, _Z,       \
            _Y, _I,      _E,      _A, TL_DOT,  _D, _S, _T, _N, _B,       \
-           _J, TL_EXLM, TL_COMM, _K, TL_QUOT, _W, _F, _L, _P, _V)
+           _J, TL_DQUO, TL_COMM, _K, TL_QUOT, _W, _F, _L, _P, _V)
+
+#define CARTE_BEAKL27a                          \
+  carte_de_map(" j\",k' gcmrz ",                 \
+               " yiea. dstnb ",                  \
+               " qhoux wflpv ")
+
+// Alt target is BK
+// altered shifted pairs: quot = '`  comma = ,!   dot = .@
+#define ___BEAKL27a___                                                  \
+  LANG_MAP(_J, TL_DQUO, TL_COMM, _K, TL_QUOT, _G, _C, _M, _R, _Z,       \
+           _Y, _I,      _E,      _A, TL_DOT,  _D, _S, _T, _N, _B,       \
+           _Q, _H,      _O,      _U, _X, _W, _F, _L, _P, _V)
+
 
 /* BEAKL 15 (main layer): */
-// altered shifted pairs: quot = '`  comma = ,!   dot = .@
 /*   40123 76598   */
 #define CARTE_BEAKL15                           \
   carte_de_map(" qhoux gcrfz ",                 \
@@ -153,6 +166,17 @@
 
 // Alt target is BKW
 #define ___BEAKLWIa___                                                  \
-  LANG_MAP(TL_COLN, _Y,      _O,     _U, _W,      _C, _T, _R, _S, _V,   \
+  LANG_MAP(TL_SCLN, _Y,      _O,     _U, _W,      _C, _T, _R, _S, _V,   \
            _Q,      _H,      _E,     _A, _I,      _G, _D, _N, _M, _Z,   \
            _J,      TL_COMM, TL_DOT, _K, _QUOT,   _B, _P, _L, _F, _X)
+
+#define CARTE_BEAKLWIb                          \
+  carte_de_map(" j,.k' ctrsv ",                 \
+               " qheai gdnmz ",                 \
+               " ;youw bplfx ")
+
+// Alt target is BKW
+#define ___BEAKLWIb___                                                  \
+  LANG_MAP(_J,      TL_COMM, TL_DOT, _K, _QUOT, _C, _T, _R, _S, _V,     \
+           _Q,      _H,      _E,     _A, _I,    _G, _D, _N, _M, _Z,   \
+           TL_SCLN, _Y,      _O,     _U, _W,    _B, _P, _L, _F, _X)

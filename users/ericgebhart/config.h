@@ -182,10 +182,15 @@
 //#define APTMAK_ALT_LAYER_ENABLE
 
 // BEAKL
-// #define BEAKL15_LAYER_ENABLE
+//#define BEAKL15_LAYER_ENABLE
 //#define BEAKL19_LAYER_ENABLE
 //#define BEAKL27_LAYER_ENABLE
+#define BEAKL27a_LAYER_ENABLE // punctuation on top.
 //#define BEAKLWI_LAYER_ENABLE
+// no alpha on thumb.
+//#define BEAKLWIa_LAYER_ENABLE
+// punctuation on top.
+//#define BEAKLWIb_LAYER_ENABLE
 
 // carpalx layouts
 //#define CARPALX_QFMLWY_LAYER_ENABLE
@@ -197,7 +202,6 @@
 //#define EUCALYN_LAYER_ENABLE
 //#define HANDS_UP_LAYER_ENABLE
 //#define RSTHD_LAYER_ENABLE
-//#define HANDS_UP_LAYER_ENABLE
 //#define WHITE_LAYER_ENABLE
 //#define ISRT_LAYER_ENABLE
 //#define SOUL_LAYER_ENABLE
@@ -207,13 +211,14 @@
 //#define WHORF6_LAYER_ENABLE
 
 // mtgap and relatives
-//#define MTGAP_LAYER_ENABLE
+// #define MTGAP_LAYER_ENABLE
 //#define CTGAP_LAYER_ENABLE
 //#define APT_LAYER_ENABLE
 //#define CANARY_LAYER_ENABLE
 
 // Hands down
-#define HD_NEU_NARROW_LAYER_ENABLE
+//#define HD_NEU_NARROW_LAYER_ENABLE
+#define HD_NEU_NARROW_M_LAYER_ENABLE
 //#define HD_REF_LAYER_ENABLE
 //#define HD_DASH_LAYER_ENABLE
 //#define HD_ELAN_LAYER_ENABLE

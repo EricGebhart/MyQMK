@@ -95,8 +95,17 @@ void oled_render_default_layer_state(void) {
 #ifdef BEAKL27_LAYER_ENABLE
       WRITE_STR_LAYER(_BEAKL27, "Beakl27")
 #endif
+#ifdef BEAKL27a_LAYER_ENABLE
+      WRITE_STR_LAYER(_BEAKL27a, "Beakl27a")
+#endif
 #ifdef BEAKLWI_LAYER_ENABLE
       WRITE_STR_LAYER(_BEAKLWI, "BeaklWi")
+#endif
+#ifdef BEAKLWIa_LAYER_ENABLE
+      WRITE_STR_LAYER(_BEAKLWIa, "BeaklWia")
+#endif
+#ifdef BEAKLWIb_LAYER_ENABLE
+      WRITE_STR_LAYER(_BEAKLWIb, "BeaklWib")
 #endif
 
 #ifdef CARPALX_QFMLWY_LAYER_ENABLE
@@ -116,6 +125,9 @@ void oled_render_default_layer_state(void) {
 #endif
 #ifdef HD_NEU_NARROW_LAYER_ENABLE
       WRITE_STR_LAYER(_HD_NEU_NARROW, "HD Neu N")
+#endif
+#ifdef HD_NEU_NARROW_M_LAYER_ENABLE
+      WRITE_STR_LAYER(_HD_NEU_NARROW_M, "HD Neu N Mirror")
 #endif
 #ifdef HD_TITANIUM_LAYER_ENABLE
       WRITE_STR_LAYER(_HD_TITANIUM, "HD Titanium")

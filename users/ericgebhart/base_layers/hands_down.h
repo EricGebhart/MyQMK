@@ -31,15 +31,29 @@
 
 
 // modified to fit 3x10.
-#define CARTE_HD_NEU_NARROW                     \
-  carte_de_map("   xcldb  zuoyq",               \
-               "   rsntg  ,aeih",               \
-               "   wfmpv  ;./jk")
+// combos for j and z.
+#define CARTE_HD_NEU_NARROW                    \
+  carte_de_map( "  wfmpv  /.q\"'",             \
+                "  rsntb  ,aeih",              \
+                "  xcldg  -uoyk")
 
-#define ___HD_NEU_NARROW___                                             \
-  LANG_MAP(_X, _C, _L, _D, _B,   _Z,      _U,     _O,      _Y, _Q,      \
-           _R, _S, _N, _T, _G,   TL_COMM, _A,     _E,      _I, _H,      \
-           _W, _F, _M, _P, _V,   _SCLN, TL_DOT, TL_SLSH, _J, _K)
+#define ___HD_NEU_NARROW___                                          \
+LANG_MAP(_W, _F, _M, _P, _V,  TL_SLSH, TL_DOT, _Q, TL_DQUO, TL_QUOT, \
+         _R, _S, _N, _T, _G,  TL_COMM, _A,     _E, _I,      _H,      \
+         _X, _C, _L, _D, _B,  TL_MINS, _U,     _O, _Y,      _K,      \
+         )
+
+// modified to fit 3x10.
+// mirrored.
+#define CARTE_HD_NEU_NARROW_M                   \
+  carte_de_map("   '\"q./  vpmfw",               \
+               "   hiea,  btnsr",               \
+               "   kyou-  gdlcx")
+
+#define ___HD_NEU_NARROW_M___                                           \
+  LANG_MAP(TL_QUOT, TL_DQUO, _Q, TL_DOT, TL_SLSH,   _V, _P, _M, _F, _W, \
+           _H,      _I,      _E, _A,     TL_COMM,   _B, _T, _N, _S, _R, \
+           _K,      _Y,      _O, _U,     TL_MINS,   _G, _D, _L, _C, _X)
 
 
 #define CARTE_HD_REF                            \
@@ -94,6 +108,25 @@
   LANG_MAP(_W, _V, _M, _G, _EQL,  TL_SCLN, TL_DOT, TL_SLSH, _J, TL_QUOT, \
            _C, _S, _N, _T, _K ,   TL_COMM, _A, _E, _I, _H,              \
            _P, _F, _L, _D, _X ,   TL_MINS, _U, _O, _Y, _B)
+
+// from @exanimo
+// qzx on the edges, combos or elsewhere.
+#define CARTE_HD_RHODIUMC                       \
+  carte_de_map("  `',.=  jwhv/\\ ",             \
+               " qmeia-  gtnscx ",              \
+               "  kyou;  bdlfpz  r")
+
+// qzx on the edges, combos or elsewhere.
+#define CARTE_HD_RHODIUMC2                       \
+  carte_de_map("  `\".'  jwhv/ ",                \
+               "  meia,  gtnsc ",                \
+               "  koyu-  bdlfp  r")
+
+#define ___HD_RHODIUMC___                                               \
+  LANG_MAP(_GRV, TL_SLASH, TL_DQUO, TL_DOT, _EQL,  _J, _W, _H, _J, _V,  \
+           _M,   _E,       _I,      _A,  TL_COMM,  _G, _T, _N, _S, _C, \
+           _K,   _O,       _Y,      _U,  TL_MINS,  _B, _D, _L, _F, _P)
+
 
 #define CARTE_HD_VROOMY                         \
   carte_de_map("  xflb'  ;.=jv ",               \

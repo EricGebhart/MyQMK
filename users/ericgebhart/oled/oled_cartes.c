@@ -82,6 +82,10 @@ void oled_render_layer_map(void) {
         SHOW_MAP(_BEAKL27)
 #endif
 
+#ifdef BEAKL27a_LAYER_ENABLE
+        SHOW_MAP(_BEAKL27a)
+#endif
+
 #ifdef BEAKL15_LAYER_ENABLE
         SHOW_MAP(_BEAKL15)
 #endif
@@ -92,6 +96,14 @@ void oled_render_layer_map(void) {
 
 #ifdef BEAKLWI_LAYER_ENABLE
         SHOW_MAP(_BEAKLWI)
+#endif
+
+#ifdef BEAKLWIa_LAYER_ENABLE
+        SHOW_MAP(_BEAKLWIa)
+#endif
+
+#ifdef BEAKLWIb_LAYER_ENABLE
+        SHOW_MAP(_BEAKLWIb)
 #endif
 
 #ifdef CARPALX_QFMLWY_LAYER_ENABLE
@@ -129,6 +141,10 @@ void oled_render_layer_map(void) {
 
 #ifdef HD_NEU_NARROW_LAYER_ENABLE
         SHOW_MAP(_HD_NEU_NARROW)
+#endif
+
+#ifdef HD_NEU_NARROW_M_LAYER_ENABLE
+        SHOW_MAP(_HD_NEU_NARROW_M)
 #endif
 
 #ifdef HD_TITANIUM_LAYER_ENABLE
