@@ -185,7 +185,7 @@
 //#define BEAKL15_LAYER_ENABLE
 //#define BEAKL19_LAYER_ENABLE
 //#define BEAKL27_LAYER_ENABLE
-#define BEAKL27a_LAYER_ENABLE // punctuation on top.
+//#define BEAKL27a_LAYER_ENABLE // punctuation on top.
 //#define BEAKLWI_LAYER_ENABLE
 // no alpha on thumb.
 //#define BEAKLWIa_LAYER_ENABLE

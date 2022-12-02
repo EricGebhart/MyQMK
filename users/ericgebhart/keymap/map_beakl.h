@@ -29,14 +29,12 @@ B_LAYER(LANG_N(_BEAKL15), ___10_NUMBERS_BEAKL15___, ___BEAKL15___),
 #ifdef BEAKL27_LAYER_ENABLE
 #undef ALT_TARGET_IS
 #define ALT_TARGET_IS BK2 // NONE, DV = dvorak, BK=Beakl, BKW=Beaklwi.
-
   B_LAYER(LANG_N(_BEAKL27), ___10_NUMBERS_BEAKL19___, ___BEAKL27___),
 #endif
 
 #ifdef BEAKL27a_LAYER_ENABLE
 #undef ALT_TARGET_IS
 #define ALT_TARGET_IS BK2 // NONE, DV = dvorak, BK=Beakl, BKW=Beaklwi.
-
   B_LAYER(LANG_N(_BEAKL27a), ___10_NUMBERS_BEAKL19___, ___BEAKL27a___),
 #endif
 
