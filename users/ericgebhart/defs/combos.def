@@ -62,7 +62,7 @@ COMB(SMLNAV,     SML_NAV,        CB_2L3, CB_2R3)
 
 // Row 3
 // index/index
-COMB(capsword,  CAPS_WORD,      CB_3L4, CB_3R2)
+COMB(capsword,  CAPS_WORD_ON,      CB_3L4, CB_3R2)
 
 // middle/middle
 COMB(OSRALT,    OS_RALT,        CB_3L3, CB_3R3)
