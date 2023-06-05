@@ -15,6 +15,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+// someone needs the layers enum.
 #include USERSPACE_H
 
 #include "extensions.h"
@@ -30,19 +31,21 @@
 #include "unicode.h"
 #include "key_overrides.h"
 #include "console_key_logger.h"
+#include "adaptive_keys.h"
 
 // should make header files maybe. being lazy.
 void process_not_dead(uint16_t keycode, keyrecord_t *record);
 bool process_alt_shift_user(uint16_t keycode, keyrecord_t *record);
 void process_send_strs(uint16_t keycode, keyrecord_t *record);
-//bool process_alt_local_key(uint16_t keycode, keyrecord_t* record);
+bool process_alt_local_key(uint16_t keycode, keyrecord_t* record);
 bool process_global_quick_tap(uint16_t keycode, keyrecord_t *record);
-
-// call this from the top of process records before the switch.
 
 bool process_extensions(uint16_t keycode, keyrecord_t *record){
   if (!process_locales(keycode, record)) { return false; }
 
+#ifdef ADAPTIVE_KEYS_ENABLE
+  if (!process_adaptive_key(keycode, record)) {return false; }
+#endif
 #ifdef GLOBAL_QUICK_TAP_ENABLE
   if (!process_global_quick_tap(keycode, record)) {return false; }
 #endif

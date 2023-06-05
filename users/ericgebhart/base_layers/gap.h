@@ -16,13 +16,6 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-// an alternate I found.
-/* Reference: MTGAP */
-/* y p o u - | b d l c k j */
-/* i n e a , | m h t s r v */
-/* ( " ' . _ | ) f w g x */
-/*   z */
-
 #define CARTE_MTGAP                             \
   carte_de_map("   ypouj  kdlcw",               \
                "   inea,  mhtsr",               \
@@ -44,7 +37,6 @@
   LANG_MAP(_W, _G, _D, _F, _B,    _Q, _L, _U, _O, _Y,                   \
            _R, _S, _T, _H, _K,    _J, _N, _E, _A, _I,           \
            _X, _C, _M, _P, _V,    _Z, TL_COMM, TL_DOT, TL_QUOT, TL_SLSH)
-
 
 #define CARTE_CTGAP                             \
   carte_de_map("  vplcf  kuoyj",                \

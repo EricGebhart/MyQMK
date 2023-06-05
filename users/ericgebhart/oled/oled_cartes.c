@@ -151,6 +151,30 @@ void oled_render_layer_map(void) {
         SHOW_MAP(_HD_TITANIUM)
 #endif
 
+#ifdef HD_VIBRANIUM_LAYER_ENABLE
+        SHOW_MAP(_HD_VIBRANIUM)
+#endif
+
+#ifdef HD_VIBRANIUM_NT_LAYER_ENABLE
+        SHOW_MAP(_HD_VIBRANIUM_NT)
+#endif
+#ifdef HD_VIBRANIUM_NTP_LAYER_ENABLE
+        SHOW_MAP(_HD_VIBRANIUM_NTP)
+#endif
+#ifdef HD_VIBRANIUM_VF_LAYER_ENABLE
+        SHOW_MAP(_HD_VIBRANIUM_VF)
+#endif
+#ifdef HD_VIBRANIUM_VP_LAYER_ENABLE
+        SHOW_MAP(_HD_VIBRANIUM_VP)
+#endif
+#ifdef HD_VIBRANIUM_B_LAYER_ENABLE
+        SHOW_MAP(_HD_VIBRANIUM_B)
+#endif
+
+#ifdef HD_MITHRIL_LAYER_ENABLE
+        SHOW_MAP(_HD_MITHRIL)
+#endif
+
 #ifdef HD_VROOMY_LAYER_ENABLE
         SHOW_MAP(_HD_VROOMY)
 #endif
@@ -218,6 +242,12 @@ void oled_render_layer_map(void) {
 #endif
 #ifdef WHORF6_LAYER_ENABLE
         SHOW_MAP(_WHORF6)
+#endif
+#ifdef PINE_LAYER_ENABLE
+        SHOW_MAP(_PINE)
+#endif
+#ifdef GRAPHITE_LAYER_ENABLE
+        SHOW_MAP(_GRAPHITE)
 #endif
 
 #ifdef BEPO_LAYER_ENABLE

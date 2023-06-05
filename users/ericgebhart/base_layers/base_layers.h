@@ -1,6 +1,6 @@
 #pragma once
 /*
-  Copyright 2018-2022 Eric Gebhart <e.a.gebhart@gmail.com>
+  Copyright 2018-2023 Eric Gebhart <e.a.gebhart@gmail.com>
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -20,19 +20,18 @@
 #include "lang_map.h"
 #include "oled_stuff.h"
 
-
 // an empty template.
 
 /* #define CARTE_EMPTY                \ */
 /*   carte_de_map("  ",               \ */
 /*                "  ",               \ */
 /*                "  ") */
+
 /*                      */
 /* #define ___EMPTY___                             \ */
 /*   LANG_MAP(_, _, _, _, _,   _, _, _, _, _,      \ */
 /*            _, _, _, _, _,   _, _, _, _, _,      \ */
 /*            _, _, _, _, _,   _, _, _, _, _)        */
-
 
 // dvorak, capewell-dvorak, ahei, and boo.
 #include "dvorak.h"
@@ -52,7 +51,10 @@
 #include "bepo.h"
 // some carpalxs.
 #include "carpalx.h"
-// The symbol, number function rows for all the above.
-#include "toprows.h"
+
+// should live in layers.
 // some layers with accents and dead keys.
 #include "accents.h"
+
+// Provides all the base layers we have.
+// base_layers.h ends here.

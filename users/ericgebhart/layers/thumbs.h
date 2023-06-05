@@ -65,6 +65,20 @@
 #define ___6_ERGO_THUMBS_mod_layers_nav___                      \
   ALT_DEL, BSPC_SYMB, GUI_ESC,  ENT_NAV, SPC_TOPR, ACCENTS_RALT
 
+// kinesis has the big keys closer, not further
+// move enter and space -> so they are on the big easy keys.
+#define ___6_ERGO_THUMBS_mod_layers_nav_kinesis___              \
+  BSPC_SYMB, SML_KEYPAD, GUI_ESC,  ACCENTS_RALT, ENT_NAV, SPC_TOPR
+
+#define ___6_ERGO_THUMBS_mod_layers_nav_kinesis_ltr___                  \
+  BSPC_SYMB, TH_LTR_SYM, GUI_ESC,  ACCENTS_RALT, ENT_NAV, SPC_TOPR
+
+// for keymaps that need a letter on the thumb. puts the symbol layer
+// on the letter if held. Use THUMB_LETTER directly for just the letter.
+// should be in the mod layer stuff, not here. wrap it there. fix.
+#define ___6_ERGO_THUMBS_left_letter___                         \
+  BSPC_ALT, TH_LTR_SYM, GUI_ESC,  ENT_NAV, SPC_TOPR, KC_TAB
+
 // for keymaps that need a letter on the thumb.
 #define ___6_ERGO_THUMBS_left_letter___                                 \
   BSPC_ALT, TH_LTR_SYM, GUI_ESC,  ENT_NAV, SPC_TOPR, KC_TAB
@@ -109,6 +123,7 @@
 // Give the right symbol suffix by the value of THUMBS_ARE
 // Basically we choose the right cluster here, so the layout
 // level doesn't know or care.
+// ___6_ERGO_THUMBS_ + /somthing, something/
 //
 // ___foo  --> ___foo_WI___, or ___foo_WIa___, or ___foo_def___.
 // THUMBS_ARE = WI, or WIa, or DEFAULT, TEST, TRNS, MOD_LAYERS, etc.
@@ -134,6 +149,8 @@
 #define HD_EXT _hd___  // takes a letter for the left thumb.
 #define HDA_EXT _hd_a___  // relocate backspace
 #define HD_SIMPLE_EXT _hd_simple___  // no LTs or MT´s.
+#define KINESIS_EXT _mod_layer_nav_kinesis___
+#define KINESIS_LTR_EXT _mod_layers_nav_kinesis_ltr___
 // for the function layers
 #define COMBO_EXT _COMBO___
 #define COMBO2_EXT _COMBO2___
@@ -143,9 +160,16 @@
 #define SYMB_THUMBS_EXT _symb___
 
 #define ___6_ERGO_THUMBS___ CAT2(___6_ERGO_THUMBS, THUMB_EXT)
+
+
+// Bigger thumb clusters, kyria, ergodox, kinesis, dactyl
+// these use the 6 ergo thumbs above inside of here.
+
 // for the kyria, mostly for the combo reference layers.
 #define ___10_ERGO_THUMBS___ CATR(___10_ERGO_THUMBS, EXP_THUMB_EXT)
 #define ___4_THUMBS___ CAT2(___4_THUMBS, EXP_THUMB_EXT)
+
+
 
 /* #define ___6_ERGO_THUMBS___ ___6_ERGO_THUMBS_def___ */
 

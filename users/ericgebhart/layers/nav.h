@@ -14,46 +14,6 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-/********************************************************************************/
-/* NAVIGATION  - MOUSE, Scroll, Buttons, Arrows, Tab, Home, page up/down, End   */
-/* Navigation layers:                                                           */
-/*    3 row Layer                                                               */
-/*    4 Row Layer with repeated and swapped VI arrows, and Scroll wheel.        */
-/********************************************************************************/
-/*                                                                              */
-/* Navigation layer with optional 4th Row....                                   */
-/* Optional edge columns.                                                       */
-/*                                                                              */
-/*                                                                              */
-/* M = Mouse                                                                    */
-/* B = Button                                                                   */
-/* W = Wheel                                                                    */
-/* AC   = Acceleration                                                          */
-/* CCCV = Tap -> Ctrl-C, hold for double tap duration -> Ctrl-V                 */
-/* CTCN = Tap -> Ctrl-T, hold for double tap duration -> Ctrl-N                 */
-/* CWCQ = Tap -> Ctrl-W, hold for double tap duration -> Ctrl-Q                 */
-/* replaced CWCQ with KC_DOT in NAVA - 22-11-2022                               */
-/*  Dot is the repeat key in vi (vi keybindings)                                */
-/*                                                                              */
-/* NAVA traded home and end for tab and backtab, combos fix that.               */
-/* Combos: see combos.def                                                       */
-/* HOME = TAB & PGDN                                                            */
-/* END =  BKTAB & PGUP                                                          */
-/*                                                                              */
-/* NAVA also has lock mods on the top row mouse side                            */
-/* MB5  GUI    ALT    CTRL SFT     MAC0  |  CTCN  MB1    MB2    MB3  MB4   MB5  */
-/*                                                                              */
-/* MB5  MB4    MB3    MB2  MB1     MAC0  |  CTCN  MB1    MB2    MB3  MB4   MB5  */
-/* TAB  MLeft  MDown  MUp  MRight  MAC1  |  CCCV  Left   Down   UP   Right TAB  */
-/*      WLeft  WDown  WUp  WRight  MAC2  |  CWCQ  HOME   PGDN   PGUP END        */
-/*                                                                              */
-/*      WLeft  WDown  WUp  WRight  MAC2  |  CWCQ  TAB    PGDN   PGUP BKTAB      */
-/*                                                                              */
-/*      WLeft  WDown  WUp  WRight  MAC2  |  DOT   TAB    PGDN   PGUP BKTAB      */
-/*                                                                              */
-/*      Left   Down   Up   Right   CCCV  |  CCCV   MLeft  MDown  MUp  MRight    */
-/*                                                                              */
-/********************************************************************************/
 
 #ifdef MOUSEKEY_ENABLE
 #define ___MOUSE_LDUR___      KC_MS_L,  KC_MS_D,  KC_MS_U,  KC_MS_R
@@ -126,6 +86,7 @@
 
 #endif // end mousekey
 
+
 #define ___6NAV_R_2___ KC_CCCV, ___VI_ARROWS___,          TAB_BKTAB
 #define ___6NAV_R_3___ KC_CWCQ, ___HOME_PGDN_PGUP_END___, ___
 
@@ -156,53 +117,52 @@
 #define ___10_NAVm_3___ ___NAV_L_3___, ___NAV_R_3___
 #endif
 
-/********************************************************************************/
-/* The Navigation LAYER Chunks                                                  */
-/********************************************************************************/
 // A Navigation Layer
 #define CARTE_NAV                               \
   carte_de_map("54321 0  ctn 12345",            \
                " ldur 1  ccv ldur",             \
                " ldur 2   .  tdubt")
 
+#define ___NAV_3x10___ ___10_NAV_1___, ___10_NAV_2___, ___10_NAV_3___
+#define ___NAV_3x12___ ___12_NAV_1___, ___12_NAV_2___, ___12_NAV_3___
+
 #define CARTE_NAVA                              \
   carte_de_map(" gacs 0  ctn 12345",             \
                " ldur 1  ccv ldur",              \
                " ldur 2   .  tdubt")
+
+#define ___NAVA_3x10___ ___10_NAV_1a___, ___10_NAV_2___, ___10_NAV_3___
 
 #define CARTE_NAVnm                             \
   carte_de_map(" gacsc2 ctn cscag ",            \
                " gacs   ccv ldur",              \
                " __M_   cwq HDUE")
 
+#define ___NAVnm_3x10___ ___10_NAVnm_1___, ___10_NAVnm_2___, ___10_NAVnm_3___
+
 #define CARTE_NAVm                                 \
   carte_de_map(" gacs 0  ctn 12345",               \
                " ldur 1  ccv ldur",                \
                " ldur 2  cwq HDUE")
+
+#ifdef MOUSEKEY_ENABLE
+#define ___NAVm_3x10___ ___10_NAVm_1___, ___10_NAVm_2___, ___10_NAVm_3___
+#endif
 
 #define CARTE_NAV_miryoku                       \
   carte_de_map("  rdo  ccp undo",               \
                "  Caps ldur",                   \
                "  Ins  HDUE")
 
+#define ___NAV_miryoku___ \
+  ___5___, ___redo_cut_copy_paste_undo___,                              \
+    ___5___, KC_CAPS, ___VI_ARROWS___,                                  \
+    ___5___, KC_INSERT, ___HOME_
+
 #define CARTE_NAVm_miryoku                      \
   carte_de_map("  rdo ccp undo",               \
                "      ldur",                   \
                "      ldur")
-
-
-#ifdef MOUSEKEY_ENABLE
-#define ___NAVm_3x10___ ___10_NAVm_1___, ___10_NAVm_2___, ___10_NAVm_3___
-#endif
-
-#define ___NAVnm_3x10___ ___10_NAVnm_1___, ___10_NAVnm_2___, ___10_NAVnm_3___
-#define ___NAVA_3x10___ ___10_NAV_1a___, ___10_NAV_2___, ___10_NAV_3___
-#define ___NAV_3x10___ ___10_NAV_1___, ___10_NAV_2___, ___10_NAV_3___
-#define ___NAV_3x12___ ___12_NAV_1___, ___12_NAV_2___, ___12_NAV_3___
-#define ___NAV_miryoku___ \
-  ___5___, ___redo_cut_copy_paste_undo___,                              \
-    ___5___, KC_CAPS, ___VI_ARROWS___,                                  \
-    ___5___, KC_INSERT, ___HOME_PGDN_PGUP_END___
 
 #ifdef MOUSEKEY_ENABLE
 #define ___NAVm_miryoku___                                              \

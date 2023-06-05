@@ -19,9 +19,8 @@
 #include "quantum.h"
 #include "process_keycode/process_tap_dance.h"
 #include "eeconfig.h"
-#include "keymap_bepo.h"
-//#include "keymap_us_international.h"
-#include "keymap_us_international_linux.h"
+
+
 #include "lang.h"
 #include "ericgebhart.h"
 
@@ -55,6 +54,7 @@ enum userspace_custom_keycodes {
 #undef ACCENTED
 #endif
 
+// 4 different kinds of defs.
 #ifdef TAP_HOLD_ENABLE
 #undef TP_TPL
 #define TP_TPL KEY_NAME
@@ -164,6 +164,8 @@ enum userspace_custom_keycodes {
 #define TL_MINS TLKC(_MINS)
 #define TL_LPRN TLKC(_LPRN)
 #define TL_LCBR TLKC(_LCBR)
+#define TL_HASH TLKC(_HASH)
+#define TL_EQL  TLKC(_EQL)
 #ifdef SYMBOL_LAYER_ENABLE
 #define TL_DOT_SYMB LT(LN_SYMB, LANG_KC(TL_DOT))
 #endif

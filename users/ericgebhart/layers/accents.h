@@ -1,6 +1,5 @@
-#pragma once
 /*
-  Copyright 2018-2022 Eric Gebhart <e.a.gebhart@gmail.com>
+  Copyright 2018-2023 Eric Gebhart <e.a.gebhart@gmail.com>
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -15,8 +14,6 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-
-// probably best to have e and é on different fingers.
 
 // doesnt work, oled displays garbage
 /* #define CARTE_ACCENTED                          \ */
@@ -35,6 +32,7 @@
            _AGRV, _OCIR, _EGRV, _EACU, _ICIR,   _UCIR, _CCED, _NTIL, _SS,   _DCIR, \
            _AACU, _ODIA, _IACU, _UACU, _IACU,   _SPC,  _SPC,  _SPC , _SPC,  _SPC)
 
+// doesnt work, oled displays garbage
 
 // A dead key layer, optimized for Most common,
 // western european.

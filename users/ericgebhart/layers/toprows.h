@@ -23,20 +23,21 @@
 /* I currently use the beakl number row with regular symbols.      */
 /* I never use function keys for anything.                         */
 /*******************************************************************/
-// Kinesis function key row. I don't use them. but might as well define them.
-#define ___KINTFUNC_L___ KC_ESC, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8
-// #define ___KINTFUNC_RIGHT___ KC_F9, KC_F10, KC_F11, KC_F12, KC_PSCR, KC_SCRL, KC_PAUS, KC_FN0, QK_BOOT
-#define ___KINTFUNC_R___ KC_F9, KC_F10, KC_F11, KC_F12, XXX, XXX, XXX, XXX, QK_BOOT
 
-// A TOPROWS Layer.
-// set it how you like it, if you like it.
-
-
-//#define ___MODS_ROW___ ___OS_MODS_L___, ___, ___SML_MODS_R___
-#define ___MODS_ROW___ ___SML_MODS_L___, ___, ___OS_MODS_R___
 /********************************************************************************/
 /* TOPROWS Layer chunk                                                          */
 /********************************************************************************/
+
+#define CARTE_RAISE                             \
+  carte_de_map("   !@#$%  ^&*()",               \
+               "   12345  67890",               \
+               " F1-    --    -F12")
+
+#define ___RAISE_3x10___                        \
+  ___10_SYMBOLS___,                             \
+    ___10_NUMBERS___,                           \
+    ___10_FUNCS___
+
 // These rows have already been langed, at their creation.
 // altogether in a chunk.
 #define CARTE_TOPROWS_BKL15                     \
@@ -87,14 +88,4 @@
 #define ___TOPROWS_BKL19_3x10___                \
   ___10_SYMBOLS___,                             \
     ___10_NUMBERS_BEAKL19___,                   \
-    ___10_FUNCS___
-
-#define CARTE_RAISE                             \
-  carte_de_map("   !@#$%  ^&*()",               \
-               "   12345  67890",               \
-               " F1-    --    -F12")
-
-#define ___RAISE_3x10___                        \
-  ___10_SYMBOLS___,                             \
-    ___10_NUMBERS___,                           \
     ___10_FUNCS___

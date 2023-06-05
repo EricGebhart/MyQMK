@@ -62,7 +62,7 @@ COMB(SMLNAV,     SML_NAV,        CB_2L3, CB_2R3)
 
 // Row 3
 // index/index
-COMB(capsword,  CAPS_WORD_ON,      CB_3L4, CB_3R2)
+COMB(capsword,  QK_CAPS_WORD_TOGGLE,      CB_3L4, CB_3R2)
 
 // middle/middle
 COMB(OSRALT,    OS_RALT,        CB_3L3, CB_3R3)
@@ -105,7 +105,7 @@ COMB(OSCTL_BP,     OS_LCTL,        CB2_2L3, CB2_2L4)
 COMB(OSSFT_BP,     OS_LSFT,        CB2_2R2, CB2_2R3)
 // COMB(SMLKEYPAD_BP, SML_KEYPAD_BP,  CB2_2R3, CB2_2R4)
 
-COMB(capsword_BP,  CAPS_WORD_ON,   CB2_3L4, CB2_3R2)
+COMB(capsword_BP,  QK_CAPS_WORD_TOGGLE,   CB2_3L4, CB2_3R2)
 
 // COMB(OSLSYMBP_BP,  OSL(_SYMB_BP),  CB2_TH2, CB2_TH5)
 COMB(LNAV_BP,      SML_NAV,        CB2_TH3, CB2_TH4)

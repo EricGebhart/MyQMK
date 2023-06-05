@@ -1,3 +1,21 @@
+#pragma once
+/*
+  Copyright 2018-2022 Eric Gebhart <e.a.gebhart@gmail.com>
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 #define CARTE_COLEMAK                           \
   carte_de_map("   qwfpg  jluy;",               \
                "   arstd  hneio",               \
@@ -7,7 +25,6 @@
   LANG_MAP(_Q, _W, _F, _P, _G,    _J, _L,  _U,      _Y,     TL_SCLN,    \
            _A, _R, _S, _T, _D,    _H, _N,  _E,      _I,     _O,         \
            _Z, _X, _C, _V, _B,    _K, _M,  TL_COMM, TL_DOT, TL_SLSH)
-
 
 #define CARTE_COLEMAK_DH                        \
   carte_de_map("   qwfpb  jluy;",               \
@@ -49,7 +66,6 @@
            _A, _S, _T, _F, _G,   _H, _N, _E,      _O,     TL_SCLN,      \
            _Z, _X, _C, _V, _B,   _J, _M, TL_COMM, TL_DOT, TL_SLSH)
 
-
 #define CARTE_MINIMAK_12                        \
   carte_de_map("  qwdfk  yuil;",                \
                "  astrg  hneop",                \
@@ -59,7 +75,6 @@
   LANG_MAP(_Q, _W, _D, _F, _K,   _Y, _U, _I,      _L,     _SCLN,        \
            _A, _S, _T, _R, _G,   _H, _N, _E,      _O,     _P,           \
            _Z, _X, _C, _V, _B,   _J, _M, TL_COMM, TL_DOT, TL_SLSH)
-
 
 #define CARTE_SEMIMAK_JQ                        \
   carte_de_map( "  flhvz  'wuoy",               \
@@ -81,7 +96,6 @@
            _S, _R, _N, _T, _K,      _C, _D, _E, _A, _I,                 \
            _X, TL_QUOT, _B, _M, _J,  _P, _G, TL_COMM, TL_DOT, TL_SLSH)
 
-
 // APTMAP E on thumb.
 #define CARTE_APTMAK_30                         \
   carte_de_map( "  ;wfpb  qluy'",               \
@@ -92,7 +106,6 @@
   LANG_MAP(TL_SCLN, _W, _F, _P, _B,      _Q, _L, _U, _Y, TL_QUOT,       \
            _R,      _S, _T, _H, _K,      _J, _N, _A, _I, _O,            \
            _X,      _C, _D, _M, _V,      _P, _G, TL_COMM, TL_DOT, TL_SLSH)
-
 
 #define CARTE_APTMAK                            \
   carte_de_map( "  /wfpb  jluy'",               \
