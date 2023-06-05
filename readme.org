@@ -1,0 +1,59 @@
+* Eric.a's QMK user space.
+
+This is just my parts of the =Qmk_firmware=, I use this to do my own development and
+I update to qmk every now and then.
+
+Just get your qmk firmware and copy this code into it. There is my user space
+and a few empty keyboard keymaps.
+
+I have begun using Emacs Org to manage this code.
+As such, the readme is still valid, but dated.  It does provide more
+information which may be useful.
+But current code and explanation is in the org files. Which are easy to read.
+
+I realize that it might make it more difficult for people who dont have
+emacs and org. But the org files do create all the original source code
+files which was well organized to begin with. So its perfectly reasonable
+to ignore the org files if desired.
+
+The configuration is now kept in [[config.org][config.org]] along with a fair amount
+of explanation. config.org tangles its contents primarily into config.h and
+rules.mk.  Some language code is also there.
+
+The rest of the project is divided among various org files which tangle
+into the original code files.  Only the keymap, =layer_names= and the oled
+stuff is not contained in org files.
+
+My goals with org, are to make a checkbox config, and automatic boilerplate
+code for when a new layer is created. On verra.
+
+The org file name matches the folder name that it tangles its code to.
+
+** [[file:readme.org][readme.org]]
+This file.  This is the original readme converted to org format.
+
+The org files which contain this code.
+*** [[file:introduction.org][introduction.org]]
+This file, Some explanation of the parts and where you turn everything on and off.
+*** [[file:config.org][config.org]]
+This file, Some explanation of the parts and where you turn everything on and off.
+*** [[file:lang.org][lang.org]]
+This has some internals about keycodes and language, the structure of the layout wrappers and
+various other things that didn't belong here.
+*** [[file:base_layers.org][base_layers.org]]
+This is where all the base layers live.  Dvorak, Beakl, Qwerty, Hands Down, Colemak,...
+*** [[file:extensions.org][extensions.org]]
+Code and definitions for extensions, key over-rides, combos, tap hold, smart locks, keycodes, etc.
+*** [[file:keyboards.org][keyboards.org]]
+The layout matrices and keyboard mappings.
+*** [[file:mod_layers.org][mod_layers.org]]
+Mod layer definitions to apply to the keymap given.
+*** [[file:perimeter.org][perimeter.org]]
+Edge keys, thumb keys, number rows. Middle keys.  Not really in the org yet.
+
+*** The code not found in org.
+Not everything is in org. One of the motivations of using org is to automate some of these.
+- /oled//
+- layers/
+- =layer_names/=
+- perimeter/
