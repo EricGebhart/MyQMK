@@ -93,7 +93,8 @@ ak_t* find_adaptive_key(uint16_t keycode, uint16_t prior_keycode){
 void print_ak(ak_t* ak){
     uprintf("Number of adaptive keys: %u \n\n", AK_LEN);
     uprintf("The MG adaptive has these keys and address.\n");
-    uprintf("ak_mg keys: %u %u\n", ak_keysMG[0], ak_keysMG[1]);
+    uprintf("ak_mg keys: %u %u\n", pgm_read_word(&ak_keysMG[0]),
+            pgm_read_word(&ak_keysMG[1]));
     uprintf("Address of ak_keysMG: %p\n", &ak_keysMG[0]);
     uprintf("Address of keys in [AK_MG] struct: %p\n\n",
             adaptive_keys[AK_MG].keys);
@@ -102,12 +103,12 @@ void print_ak(ak_t* ak){
             ak->prefix_key, ak->keycode, ak->processed);
 
     for (uint8_t j=0;ak->keys[j] != ak_end;){
-        uprintf("The keys we should send\n");
-        uprintf("key to send: %u ak_end: %u\n", ak->keys[j], ak_end);
-        if (j > 5)
-            break;
-        j++;
-        uprintf("Next key: %u ak_end: %u\n", ak->keys[j], ak_end);
+      uprintf("The keys we should send\n");
+      uprintf("key to send: %u ak_end: %u\n", ak->keys[j], ak_end);
+      if (j > 5)
+        break;
+      j++;
+      uprintf("Next key: %u ak_end: %u\n", ak->keys[j], ak_end);
     }
 }
 
@@ -115,14 +116,11 @@ void print_ak(ak_t* ak){
 // return the requested return code.
 bool send_adaptive_keys(ak_t* ak){
     // loop through the keys and send them until we hit AK_END.
-    for (uint8_t j=0;ak->keys[j] != ak_end; ++j){
-        tap_code16(ak->keys[j]);
-        uprintf("send key %u\n", ak->keys[j]);
-        if (j > 5)
-            break;
+  for (uint8_t j=0;pgm_read_word(&ak->keys[j]) != ak_end; ++j){
+    tap_code16(pgm_read_word(&ak->keys[j]));
     }
 
-  return (ak->processed);  // return true or false.
+    return (ak->processed);  // return true or false.
 }
 
 bool process_adaptive_key(uint16_t keycode, keyrecord_t *record) {
@@ -148,7 +146,7 @@ bool process_adaptive_key(uint16_t keycode, keyrecord_t *record) {
 
     ak = find_adaptive_key(keycode & QK_BASIC_MAX, prior_keycode);
 
-    print_ak(ak);
+    //print_ak(ak);
 
     if (ak != NULL){  // send the keys if we found one.
         return_processed = send_adaptive_keys(ak);
