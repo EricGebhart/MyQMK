@@ -5133,9 +5133,6 @@ This started as an implementation of Alan Reiser's Adaptive keys.
 //Left hand adaptives
 // (most are single-handed neighbor fingers, bc speed, dexterity limits)
 
-AK(MG, KC_M, KC_G, false, KC_L)  // MG produces LG
-AK(GM, KC_G, KC_M, false, KC_L)  // GM produces GL
-
 // TC -> TCH
 // roll for tch
 AK(TC, KC_T, KC_C, false, KC_C, KC_H)
@@ -5159,7 +5156,7 @@ AK(TC, KC_T, KC_C, false, KC_C, KC_H)
  AK(PB, KC_P, KC_B, true, KC_BSPC, KC_L)
  AK(PV, KC_P, KC_V, true, KC_BSPC, KC_L)
 
-// AK(MG, KC_M, KC_G, false, KC_L)
+ AK(MG, KC_M, KC_G, false, KC_L)
  AK(PG, KC_P, KC_G, true, KC_BSPC, KC_L)
  AK(TG, KC_T, KC_G, false, KC_H, KC_I, KC_N, KC_G)
 
@@ -5170,7 +5167,7 @@ AK(TC, KC_T, KC_C, false, KC_C, KC_H)
 
  // M becomes L after MGJPV
  AK(JM, KC_J, KC_M, true,  KC_BSPC, KC_L)
- //AK(GM, KC_G, KC_M, false, KC_L)
+ AK(GM, KC_G, KC_M, false, KC_L)
  AK(PM, KC_P, KC_M, false, KC_L)
  AK(VM, KC_V, KC_M, false, KC_L)
  AK(GP, KC_G, KC_P, true,  KC_BSPC, KC_L)

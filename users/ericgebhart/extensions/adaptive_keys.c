@@ -47,7 +47,7 @@ uint16_t ak_end = AK_END;
 
 // Create a bunch of terminated key lists in memory to point at
 #define AK_DATA(name, prefix_key, key, processed, ...) \
-    const uint16_t ak_keys##name[] = {__VA_ARGS__, AK_END};
+    const uint16_t PROGMEM ak_keys##name[] = {__VA_ARGS__, AK_END};
 
 // build an array of adaptive key structs that point at their keys.
 // use its enum for the index.
@@ -103,12 +103,12 @@ void print_ak(ak_t* ak){
             ak->prefix_key, ak->keycode, ak->processed);
 
     for (uint8_t j=0;ak->keys[j] != ak_end;){
-      uprintf("The keys we should send\n");
-      uprintf("key to send: %u ak_end: %u\n", ak->keys[j], ak_end);
-      if (j > 5)
-        break;
-      j++;
-      uprintf("Next key: %u ak_end: %u\n", ak->keys[j], ak_end);
+        uprintf("The keys we should send\n");
+        uprintf("key to send: %u ak_end: %u\n",
+                pgm_read_word(&ak->keys[j]), ak_end);
+        j++;
+        uprintf("Next key: %u ak_end: %u\n",
+                pgm_read_word(&ak->keys[j]), ak_end);
     }
 }
 
@@ -116,11 +116,11 @@ void print_ak(ak_t* ak){
 // return the requested return code.
 bool send_adaptive_keys(ak_t* ak){
     // loop through the keys and send them until we hit AK_END.
-  for (uint8_t j=0;pgm_read_word(&ak->keys[j]) != ak_end; ++j){
-    tap_code16(pgm_read_word(&ak->keys[j]));
+    for (uint8_t j=0;ak->keys[j] != ak_end; ++j){
+        tap_code16(pgm_read_word(&ak->keys[j]));
     }
 
-    return (ak->processed);  // return true or false.
+  return (ak->processed);  // return true or false.
 }
 
 bool process_adaptive_key(uint16_t keycode, keyrecord_t *record) {
@@ -146,7 +146,7 @@ bool process_adaptive_key(uint16_t keycode, keyrecord_t *record) {
 
     ak = find_adaptive_key(keycode & QK_BASIC_MAX, prior_keycode);
 
-    //print_ak(ak);
+    // print_ak(ak);
 
     if (ak != NULL){  // send the keys if we found one.
         return_processed = send_adaptive_keys(ak);
