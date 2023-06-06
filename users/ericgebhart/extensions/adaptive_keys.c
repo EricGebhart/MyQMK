@@ -38,7 +38,6 @@ uint16_t prior_keycode;
 // stop further processing, false to let it continue.
 
 #define AK_END 65535
-uint16_t ak_end = AK_END;
 #define BLANK(...)
 #define AK_STRUCT {prefix_key, key, processed, &ak_keys##name[0]}
 
@@ -90,33 +89,11 @@ ak_t* find_adaptive_key(uint16_t keycode, uint16_t prior_keycode){
   return NULL;
 }
 
-void print_ak(ak_t* ak){
-    uprintf("Number of adaptive keys: %u \n\n", AK_LEN);
-    uprintf("The MG adaptive has these keys and address.\n");
-    uprintf("ak_mg keys: %u %u\n", pgm_read_word(&ak_keysMG[0]),
-            pgm_read_word(&ak_keysMG[1]));
-    uprintf("Address of ak_keysMG: %p\n", &ak_keysMG[0]);
-    uprintf("Address of keys in [AK_MG] struct: %p\n\n",
-            adaptive_keys[AK_MG].keys);
-
-    uprintf("A-key: Prior: %u key: %u return: %b\n",
-            ak->prefix_key, ak->keycode, ak->processed);
-
-    for (uint8_t j=0;ak->keys[j] != ak_end;){
-        uprintf("The keys we should send\n");
-        uprintf("key to send: %u ak_end: %u\n",
-                pgm_read_word(&ak->keys[j]), ak_end);
-        j++;
-        uprintf("Next key: %u ak_end: %u\n",
-                pgm_read_word(&ak->keys[j]), ak_end);
-    }
-}
-
 // Send the keys for the adaptive key pair and
 // return the requested return code.
 bool send_adaptive_keys(ak_t* ak){
     // loop through the keys and send them until we hit AK_END.
-    for (uint8_t j=0;ak->keys[j] != ak_end; ++j){
+    for (uint8_t j=0; pgm_read_word(&ak->keys[j]) != AK_END; ++j){
         tap_code16(pgm_read_word(&ak->keys[j]));
     }
 
@@ -140,15 +117,12 @@ bool process_adaptive_key(uint16_t keycode, keyrecord_t *record) {
         return true; // no adaptive conditions, so return.
     }
 
-    if (!is_caps_word_on()) { // turn off shift, (first-words & Proper nouns)
-        unregister_mods(MOD_MASK_SHIFT);  //CAPS_WORD/LOCK won't be affected.
-    }
-
     ak = find_adaptive_key(keycode & QK_BASIC_MAX, prior_keycode);
 
-    // print_ak(ak);
-
     if (ak != NULL){  // send the keys if we found one.
+        if (!is_caps_word_on()) { // turn off shift, (first-words & Proper nouns)
+            unregister_mods(MOD_MASK_SHIFT);  //CAPS_WORD/LOCK won't be affected.
+        }
         return_processed = send_adaptive_keys(ak);
         register_mods(saved_mods);
         prior_keycode = 0;
