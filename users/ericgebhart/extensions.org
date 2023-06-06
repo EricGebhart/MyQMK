@@ -5125,7 +5125,6 @@ A return code of false means continue processing this keycode.
 
 This started as an implementation of Alan Reiser's Adaptive keys.
 
-
 #+begin_src C :tangle defs/adaptive_keys.def
 // define adaptive keys here.
 // name, first key, second key, return, keys...
@@ -5133,6 +5132,9 @@ This started as an implementation of Alan Reiser's Adaptive keys.
 
 //Left hand adaptives
 // (most are single-handed neighbor fingers, bc speed, dexterity limits)
+
+AK(MG, KC_M, KC_G, false, KC_L)  // MG produces LG
+AK(GM, KC_G, KC_M, false, KC_L)  // GM produces GL
 
 // TC -> TCH
 // roll for tch
@@ -5157,7 +5159,7 @@ AK(TC, KC_T, KC_C, false, KC_C, KC_H)
  AK(PB, KC_P, KC_B, true, KC_BSPC, KC_L)
  AK(PV, KC_P, KC_V, true, KC_BSPC, KC_L)
 
- AK(MG, KC_M, KC_G, false, KC_L)
+// AK(MG, KC_M, KC_G, false, KC_L)
  AK(PG, KC_P, KC_G, true, KC_BSPC, KC_L)
  AK(TG, KC_T, KC_G, false, KC_H, KC_I, KC_N, KC_G)
 
@@ -5168,7 +5170,7 @@ AK(TC, KC_T, KC_C, false, KC_C, KC_H)
 
  // M becomes L after MGJPV
  AK(JM, KC_J, KC_M, true,  KC_BSPC, KC_L)
- AK(GM, KC_G, KC_M, false, KC_L)
+ //AK(GM, KC_G, KC_M, false, KC_L)
  AK(PM, KC_P, KC_M, false, KC_L)
  AK(VM, KC_V, KC_M, false, KC_L)
  AK(GP, KC_G, KC_P, true,  KC_BSPC, KC_L)
@@ -5273,6 +5275,7 @@ or extensions.c
 bool process_adaptive_key(uint16_t keycode, keyrecord_t *record);
 #+end_src
 
+
 Copyright header for the c file.
 
 #+begin_src C :tangle extensions/adaptive_keys.c
@@ -5337,6 +5340,7 @@ It backspaces over the T which has already happened. Then sends CK.
 // stop further processing, false to let it continue.
 
 #define AK_END 65535
+uint16_t ak_end = AK_END;
 #define BLANK(...)
 #define AK_STRUCT {prefix_key, key, processed, &ak_keys##name[0]}
 
@@ -5345,7 +5349,7 @@ It backspaces over the T which has already happened. Then sends CK.
 
 // Create a bunch of terminated key lists in memory to point at
 #define AK_DATA(name, prefix_key, key, processed, ...) \
-    const uint16_t PROGMEM ak_keys##name[] = {__VA_ARGS__, AK_END};
+    const uint16_t ak_keys##name[] = {__VA_ARGS__, AK_END};
 
 // build an array of adaptive key structs that point at their keys.
 // use its enum for the index.
@@ -5406,12 +5410,37 @@ ak_t* find_adaptive_key(uint16_t keycode, uint16_t prior_keycode){
   return NULL;
 }
 
+void print_ak(ak_t* ak){
+    uprintf("Number of adaptive keys: %u \n\n", AK_LEN);
+    uprintf("The MG adaptive has these keys and address.\n");
+    uprintf("ak_mg keys: %u %u\n", ak_keysMG[0], ak_keysMG[1]);
+    uprintf("Address of ak_keysMG: %p\n", &ak_keysMG[0]);
+    uprintf("Address of keys in [AK_MG] struct: %p\n\n",
+            adaptive_keys[AK_MG].keys);
+
+    uprintf("A-key: Prior: %u key: %u return: %b\n",
+            ak->prefix_key, ak->keycode, ak->processed);
+
+    for (uint8_t j=0;ak->keys[j] != ak_end;){
+        uprintf("The keys we should send\n");
+        uprintf("key to send: %u ak_end: %u\n", ak->keys[j], ak_end);
+        if (j > 5)
+            break;
+        j++;
+        uprintf("Next key: %u ak_end: %u\n", ak->keys[j], ak_end);
+    }
+}
+
 // Send the keys for the adaptive key pair and
 // return the requested return code.
 bool send_adaptive_keys(ak_t* ak){
-  // loop through the keys and send them until we hit AK_END.
-  for (const uint16_t *k=ak->keys; *k != AK_END; ++k)
-      tap_code16(*k);
+    // loop through the keys and send them until we hit AK_END.
+    for (uint8_t j=0;ak->keys[j] != ak_end; ++j){
+        tap_code16(ak->keys[j]);
+        uprintf("send key %u\n", ak->keys[j]);
+        if (j > 5)
+            break;
+    }
 
   return (ak->processed);  // return true or false.
 }
@@ -5420,6 +5449,9 @@ bool process_adaptive_key(uint16_t keycode, keyrecord_t *record) {
     ak_t* ak = NULL;
     uint8_t saved_mods = get_mods();
     bool return_processed = true;
+
+    if (!record->event.pressed)
+        return return_processed;
 
     // Are we in an adaptive context?
     if (timer_elapsed(adaptive_key_timer) > ADAPTIVE_TERM) {
@@ -5435,6 +5467,8 @@ bool process_adaptive_key(uint16_t keycode, keyrecord_t *record) {
     }
 
     ak = find_adaptive_key(keycode & QK_BASIC_MAX, prior_keycode);
+
+    print_ak(ak);
 
     if (ak != NULL){  // send the keys if we found one.
         return_processed = send_adaptive_keys(ak);
