@@ -5434,7 +5434,7 @@ bool process_adaptive_key(uint16_t keycode, keyrecord_t *record) {
         return true; // no adaptive conditions, so return.
     }
 
-    ak = find_adaptive_key(keycode & QK_BASIC_MAX, prior_keycode);
+    ak = find_adaptive_key(keycode, prior_keycode);
 
     if (ak != NULL){  // send the keys if we found one.
         if (!is_caps_word_on()) { // turn off shift, (first-words & Proper nouns)
