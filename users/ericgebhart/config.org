@@ -129,11 +129,9 @@ with the extensions when we get to that bit.
 
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+,*/
 
-#ifndef ericgebhart
-#define ericgebhart
-
+#include QMK_KEYBOARD_H
 #include "layer_names.h"
 #include "toprows.h"
 
@@ -141,7 +139,6 @@ with the extensions when we get to that bit.
 #include "print.h"
 #endif
 
-#endif
 #+end_src
 
 Not sure I need this at all. should try deleting it.
@@ -166,7 +163,6 @@ Not sure I need this at all. should try deleting it.
 
 #include "ericgebhart.h"
 
-#include "quantum.h"
 #include "version.h"
 #include "action.h"
 #include "action_layer.h"
@@ -308,8 +304,8 @@ on the stuff here in my configuration.
 
 *** Rules
 #+begin_src makefile :tangle rules.mk
-OLED_ENABLE = no
-OLED_CUSTOM_ENABLE = no
+OLED_ENABLE = yes
+OLED_CUSTOM_ENABLE = yes
 
 # I should check if this is still needed. I dont remember.
 ifeq ($(strip $(OLED_CUSTOM_ENABLE)), yes)
@@ -322,7 +318,7 @@ Turn on/off this too.
 
 #+begin_src C :tangle config.h
 // OLED STUFF.
-// #define OLED_CUSTOM_ENABLE // custom oled here.
+#define OLED_CUSTOM_ENABLE // custom oled here.
 //#define OLED_LOGO_ENABLE // turn on/off the logo.
 #+end_src
 
@@ -386,7 +382,7 @@ Some stuff I might want.
 #+begin_src makefile :tangle rules.mk
 BOOTMAGIC_ENABLE = no  # Enable Bootmagic Lite
 
-ENCODER_ENABLE = no
+ENCODER_ENABLE = yes
 RGBLIGHT_ENABLE = no
 BACKLIGHT_ENABLE = no
 RGB_MATRIX_ENABLE = no
@@ -439,13 +435,11 @@ and 170/5 for the Adaptive key term.
 #+begin_src C :tangle config.h
 #undef TAPPING_TOGGLE
 #undef TAPPING_TERM
-#undef IGNORE_MOD_TAP_INTERRUPT
 
 #define TAPPING_TOGGLE  2
 #define TAPPING_TERM    200
 // Alans tapping term.
 // #define TAPPING_TERM 170 // Mod TAP VS HOLD timing in milliseconds
-#define IGNORE_MOD_TAP_INTERRUPT
 
 #define TAP_HOLD_TERM    200
 #define COMBO_MUST_HOLD_MODS
@@ -501,8 +495,8 @@ This layout started with the ergodox, so it still accommodates everything a keyb
 
 // HD, HDA, HD_SIMPLE, TH_LTR, HD_DASH, KINESIS, KINESIS_LTR,
 // MIRYOKU_TR_LTR, MIRYOKU_LTR, ...
-#define THUMBS_ARE KINESIS
-#define DEFAULT_THUMBS KINESIS
+#define THUMBS_ARE FKYRIA
+#define DEFAULT_THUMBS FKYRIA
 #+end_src
 
 ** Alpha letter Thumb cluster.
@@ -513,7 +507,7 @@ to use. The letter used isn't important here. The key layout decides that for us
 
 #+begin_src C :tangle config.h
 // for the base layers which need a thumb cluster which takes a letter.
-#define HANDS_DOWN_LTR_THUMBS_ARE KINESIS_LTR
+#define HANDS_DOWN_LTR_THUMBS_ARE FKYRIA_LTR
 #define MALTRON_LTR_THUMBS_ARE TH_LTR
 #define RSTHD_LTR_THUMBS_ARE TH_LTR
 #define APTMAK_LTR_THUMBS_ARE TH_LTR
@@ -707,10 +701,18 @@ Tap for one thing, hold for tapping term for another.
 
 *** Encoders.
 
-Like the official _encoder map_ but with mod masks.  An Encoder can have different jobs depending upon layer and mods.
+The built in encoder library. Not encoder maps, but what is underneath.
+Turn it on to get encoder support.
+
+#+begin_src makefile :tangle rules.mk
+ENCODER_ENABLE = no
+#+end_src
+
+Like the official _encoder map_ but with mod masks. I wrote this before encoder map existed.
+An encoder can have different jobs depending upon layer and mod masks.
 
 #+begin_src C :tangle config.h
-// #define ENCODER_ENABLE // turn on the encoder maps.
+// #define ENCODER_EXT_ENABLE // turn on the encoder map extension.
 #+end_src
 
 
@@ -802,7 +804,7 @@ I believe, but may be wrong, that Beakl Wi comes from The Darndest thing.
 The  3x12 French oriented Beakl 19 /bis/ is listed below in the French section.
 
 #+begin_src C :tangle config.h
-// #define BEAKL15_LAYER_ENABLE
+#define BEAKL15_LAYER_ENABLE
 // #define BEAKL19_LAYER_ENABLE
 // #define BEAKL27_LAYER_ENABLE
 // #define BEAKL27a_LAYER_ENABLE // punctuation on top.
@@ -896,7 +898,7 @@ all have an alpha letter on a thumb key.
 // #define HD_VIBRANIUM_NTP_LAYER_ENABLE
 // #define HD_VIBRANIUM_VF_LAYER_ENABLE
 // #define HD_VIBRANIUM_VP_LAYER_ENABLE
-// #define HD_VIBRANIUM_B_LAYER_ENABLE
+#define HD_VIBRANIUM_B_LAYER_ENABLE
 // #define HD_MITHRIL_LAYER_ENABLE
 #+end_src
 

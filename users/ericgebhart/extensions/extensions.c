@@ -19,7 +19,6 @@
 #include USERSPACE_H
 
 #include "extensions.h"
-#include "keymap_combo.h"
 #include "altlocal_keys.h"
 #include "tap_hold.h"
 #include "accented_keys.h"

@@ -22,7 +22,7 @@
 void oled_render_default_layer_state(void) {
   //oled_write_P(PSTR("Layout: "), false);
   uint8_t layer = get_highest_layer(default_layer_state);
-  char layer_str[3];
+  char layer_str[5];
   snprintf(layer_str, sizeof(layer_str), "%u ",layer);
   oled_write(layer_str , false);
   switch (layer) {
@@ -254,7 +254,7 @@ void oled_render_default_layer_state(void) {
 
 void oled_render_layer_state(void) {
   uint8_t layer = get_highest_layer(layer_state);
-  char layer_str[3];
+  char layer_str[5];
   snprintf(layer_str, sizeof(layer_str), "%u ",layer);
   oled_write_P(PSTR(""), false);
   if (layer > 0)

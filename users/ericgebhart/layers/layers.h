@@ -15,13 +15,14 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "keycodes.h"
+#include "custom_keycodes.h"
 
 #define CHUNK_LANG_MAP(...) LANG_MAP(__VA_ARGS__)
 #define CHUNK_LANG_ROW(...) LANG_ROW(__VA_ARGS__)
 
 // moved smart/one-shot mod row to perimeter/toprows.
 
+#include "accents.h"
 #include "toprows.h"
 #include "keypads.h"
 #include "nav.h"

@@ -16,13 +16,8 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "quantum.h"
-#include "process_keycode/process_tap_dance.h"
-#include "eeconfig.h"
-
-
+#include USERSPACE_H
 #include "lang.h"
-#include "ericgebhart.h"
 
 //#define ONESHOT_TAP_TOGGLE 2  /* Tapping this number of times holds the key until tapped once again. */
 
@@ -30,8 +25,6 @@
 
 #define KEY_NAME(NAME, ...) NAME,
 #define BLANK(...)
-
-bool process_record_secrets(uint16_t keycode, keyrecord_t *record);
 
 enum userspace_custom_keycodes {
   // Get all the custom keys from the defs if we can.

@@ -223,7 +223,7 @@ key code fixer and the way to let the Oled know what our keymap looks like.
 These are included here so no one else needs to.
 
 #+begin_src C :tangle base_layers/base_layers.h
-#include "keycodes.h"
+#include "custom_keycodes.h"
 #include "lang_map.h"
 #include "oled_stuff.h"
 #+end_src
@@ -301,9 +301,6 @@ Pull in all the definitions.
 // some carpalxs.
 #include "carpalx.h"
 
-// should live in layers.
-// some layers with accents and dead keys.
-#include "accents.h"
 #+end_src
 
 This is the end of =base_layers.h=

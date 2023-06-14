@@ -231,7 +231,6 @@ Extensions.c is really just a big list of process functions which are turned on 
 #include USERSPACE_H
 
 #include "extensions.h"
-#include "keymap_combo.h"
 #include "altlocal_keys.h"
 #include "tap_hold.h"
 #include "accented_keys.h"
@@ -319,7 +318,7 @@ Custom keys are often defined in an extension's def file. For a one off sort sit
 can be added to *defs/custom_keys.def*.
  Any keycodes defined by an extension are automatically added to the custom keys enumeration
  so there is no need to define them manually. The defs get their names sucked out into
- *extensions/keycodes.h* where the enum lives. If you do not know what the custom key enum is
+ *extensions/custom_keycodes.h* where the enum lives. If you do not know what the custom key enum is
  then you are good to go until you need to know that the QMK [[https://docs.qmk.fm/#/custom_quantum_functions?id=custom-keycodes][keycodes enumerator]] is where
  you put your keycodes.
 
@@ -336,7 +335,7 @@ defined in the extensions *.c* file.
 
 These, mostly, follow a simple design pattern which gives a set of macro definitions which are used
 to create C data structures which define a list of things.  The C code /includes/ its *def* file to do what it
-wants with it.  The def files may be read many times in many different ways.  /Keycodes.h/ reads all of
+wants with it.  The def files may be read many times in many different ways.  /custom_Keycodes.h/ reads all of
 them it knows about looking for keycode names.
 
 That data is then processed at *process_record_user()* time to see if it needs to do anything.
@@ -345,8 +344,8 @@ the key code shows up in use.
 
 A new extension can be added with a process record entry in
 extensions.c. Just follow the same code pattern as the others. If an extension defines keycodes,
-add it's /include/ entry in *keycodes.h* so that they are automatically added to the enum.
-Keycodes.h is also where all the miscellaneous short cut key defines are done. Its a bit of a mess really.
+add it's /include/ entry in *custom_keycodes.h* so that they are automatically added to the enum.
+=custom_keycodes.h= is also where all the miscellaneous short cut key defines are done. Its a bit of a mess really.
 
 *** Stealing, Just in case.
 
@@ -1898,7 +1897,7 @@ Build some data
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifdef ENCODER_ENABLE
+#ifdef ENCODER_EXT_ENABLE
 #include "encoders.h"
 #include USERSPACE_H
 
@@ -1968,12 +1967,12 @@ bool do_encoder_action(uint8_t index, bool clockwise, bool layer_actions) {
 #+end_src
 *** key Codes
 **** Introduction
-/keycodes.h/ is the custom keycode enumeration.  Plus where you would put defines for
+/custom_keycodes.h/ is the custom keycode enumeration.  Plus where you would put defines for
 shortcuts to more complex key codes.
 
 Any new custom keys can just be added to  __defs/custom_keys.def__.
 
-__keycodes.h__ is an extension of sorts. It sucks all the key code names out
+__custom_keycodes.h__ is an extension of sorts. It sucks all the key code names out
 of all the other extensions and puts them in the enum so we dont have to.
 It also works just like normal for a header file where you can throw your
 keycode shortcuts and the like.
@@ -1984,13 +1983,13 @@ to add them to the enumeration manually.
 
 It will complain as usual if there are duplicates.
 
-Mostly, __keycodes.h__ is key defines to make shortcuts, since the enumeration
+Mostly, __custom_keycodes.h__ is key defines to make shortcuts, since the enumeration
 is done almost completely automatically.  This covers 99% of my custom
 key code creation.
 
 ***** When creating a new extension
 which defines keycodes, that extension will also need an entry in
-keycodes.h in order to automatically define the new key enumerations
+/custom_keycodes.h/ in order to automatically define the new key enumerations
 it´s def file creates. Just follow the code pattern you see below.
 
 **** The Defs
@@ -2092,7 +2091,7 @@ the extensions, and leaving the other cruftier bits in the .h at least feels org
  CB2_THA, CB22_THB, CB2_THC, CB2_THD,
 #+end_src
 
-**** keycodes.h pulls it all together.
+**** =custom_keycodes.h= pulls it all together.
 
 This is also where I tend to put all the other non enum type defines.
 Any language keymap headers are also included here since there job is
@@ -2101,7 +2100,7 @@ to provide us with more keycodes.
 Automatic keycodes happen in here.  For the extensions that need keycodes,
 The name macro for the extension is used to create the keycodes.
 
-#+begin_src C :tangle extensions/keycodes.h
+#+begin_src C :tangle extensions/custom_keycodes.h
 #pragma once
 /*
   Copyright 2018-2022 Eric Gebhart <e.a.gebhart@gmail.com>
@@ -2120,13 +2119,8 @@ The name macro for the extension is used to create the keycodes.
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ,*/
 
-#include "quantum.h"
-#include "process_keycode/process_tap_dance.h"
-#include "eeconfig.h"
-
-
+#include USERSPACE_H
 #include "lang.h"
-#include "ericgebhart.h"
 
 //#define ONESHOT_TAP_TOGGLE 2  /* Tapping this number of times holds the key until tapped once again. */
 
@@ -2134,8 +2128,6 @@ The name macro for the extension is used to create the keycodes.
 
 #define KEY_NAME(NAME, ...) NAME,
 #define BLANK(...)
-
-bool process_record_secrets(uint16_t keycode, keyrecord_t *record);
 
 enum userspace_custom_keycodes {
   // Get all the custom keys from the defs if we can.
@@ -4277,7 +4269,7 @@ defines *SW_WIN*, which sends left alt-tab and shift- left alt- tab, when revers
 by *SW_REV*.
 
 Note: The /reverse/ key is not automatically defined in the custom keys enum in
-_keycodes.h_. It is convenient to use the same one which causes problems
+_custom_keycodes.h_. It is convenient to use the same one which causes problems
 for automatically adding it. Add it to *custom_keys.def*. I have obviously already
 added *SW_REV*.
 

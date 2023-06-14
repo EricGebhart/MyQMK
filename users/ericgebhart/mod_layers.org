@@ -293,7 +293,7 @@ I do anticipate that these might evaporate further. But we will see.
 
 Add your file to the list of includes.
 #+begin_src C :tangle mod_layers/mod_layer.h
-#include "keycodes.h"
+#include "custom_keycodes.h"
 #include "alt_mods.h"
 #include "hrm_sacg.h"
 #include "hrm_gacs.h"

@@ -16,14 +16,10 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ericgebhart
-#define ericgebhart
-
+#include QMK_KEYBOARD_H
 #include "layer_names.h"
 #include "toprows.h"
 
 #ifdef CONSOLE_ENABLE
 #include "print.h"
-#endif
-
 #endif

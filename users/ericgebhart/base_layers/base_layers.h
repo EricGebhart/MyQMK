@@ -16,7 +16,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "keycodes.h"
+#include "custom_keycodes.h"
 #include "lang_map.h"
 #include "oled_stuff.h"
 
@@ -51,10 +51,6 @@
 #include "bepo.h"
 // some carpalxs.
 #include "carpalx.h"
-
-// should live in layers.
-// some layers with accents and dead keys.
-#include "accents.h"
 
 // Provides all the base layers we have.
 // base_layers.h ends here.

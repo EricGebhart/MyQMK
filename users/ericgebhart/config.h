@@ -36,7 +36,7 @@
 // #define BASE_NUMBER_ROW  // turn on 4 row base templates if youve got one.
 
 // OLED STUFF.
-// #define OLED_CUSTOM_ENABLE // custom oled here.
+#define OLED_CUSTOM_ENABLE // custom oled here.
 //#define OLED_LOGO_ENABLE // turn on/off the logo.
 
 #define KEYLOGGER_ENABLE // 1500 bytes, track and print keypress info to oled.
@@ -63,13 +63,11 @@
 
 #undef TAPPING_TOGGLE
 #undef TAPPING_TERM
-#undef IGNORE_MOD_TAP_INTERRUPT
 
 #define TAPPING_TOGGLE  2
 #define TAPPING_TERM    200
 // Alans tapping term.
 // #define TAPPING_TERM 170 // Mod TAP VS HOLD timing in milliseconds
-#define IGNORE_MOD_TAP_INTERRUPT
 
 #define TAP_HOLD_TERM    200
 #define COMBO_MUST_HOLD_MODS
@@ -89,11 +87,11 @@
 
 // HD, HDA, HD_SIMPLE, TH_LTR, HD_DASH, KINESIS, KINESIS_LTR,
 // MIRYOKU_TR_LTR, MIRYOKU_LTR, ...
-#define THUMBS_ARE KINESIS
-#define DEFAULT_THUMBS KINESIS
+#define THUMBS_ARE FKYRIA
+#define DEFAULT_THUMBS FKYRIA
 
 // for the base layers which need a thumb cluster which takes a letter.
-#define HANDS_DOWN_LTR_THUMBS_ARE KINESIS_LTR
+#define HANDS_DOWN_LTR_THUMBS_ARE FKYRIA_LTR
 #define MALTRON_LTR_THUMBS_ARE TH_LTR
 #define RSTHD_LTR_THUMBS_ARE TH_LTR
 #define APTMAK_LTR_THUMBS_ARE TH_LTR
@@ -132,7 +130,7 @@
 #define TAP_HOLD_ENABLE // tap for one thing, hold for tapping term to get another.
 //#define SWAPPER_ENABLE // enable Callum's swapper keys.
 
-// #define ENCODER_ENABLE // turn on the encoder maps.
+// #define ENCODER_EXT_ENABLE // turn on the encoder map extension.
 
 #define DVORAK_LAYER_ENABLE
 // #define DVORAK_RLC_IU_LAYER_ENABLE
@@ -157,7 +155,7 @@
 // #define APTMAK_30_LAYER_ENABLE
 // #define APTMAK_ALT_LAYER_ENABLE
 
-// #define BEAKL15_LAYER_ENABLE
+#define BEAKL15_LAYER_ENABLE
 // #define BEAKL19_LAYER_ENABLE
 // #define BEAKL27_LAYER_ENABLE
 // #define BEAKL27a_LAYER_ENABLE // punctuation on top.
@@ -210,7 +208,7 @@
 // #define HD_VIBRANIUM_NTP_LAYER_ENABLE
 // #define HD_VIBRANIUM_VF_LAYER_ENABLE
 // #define HD_VIBRANIUM_VP_LAYER_ENABLE
-// #define HD_VIBRANIUM_B_LAYER_ENABLE
+#define HD_VIBRANIUM_B_LAYER_ENABLE
 // #define HD_MITHRIL_LAYER_ENABLE
 
 // #define HD_NEU_LAYER_ENABLE

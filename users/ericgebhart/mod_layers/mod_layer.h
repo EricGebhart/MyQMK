@@ -17,7 +17,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "keycodes.h"
+#include "custom_keycodes.h"
 #include "alt_mods.h"
 #include "hrm_sacg.h"
 #include "hrm_gacs.h"

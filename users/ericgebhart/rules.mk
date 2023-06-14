@@ -14,8 +14,8 @@ VPATH += $(USER_PATH)/lang
 # make sure its included somewhere.
 VPATH += keyboards/gboards/g
 
-OLED_ENABLE = no
-OLED_CUSTOM_ENABLE = no
+OLED_ENABLE = yes
+OLED_CUSTOM_ENABLE = yes
 
 # I should check if this is still needed. I dont remember.
 ifeq ($(strip $(OLED_CUSTOM_ENABLE)), yes)
@@ -43,7 +43,7 @@ LTO_ENABLE = no  # optimizer saves space.
 
 BOOTMAGIC_ENABLE = no  # Enable Bootmagic Lite
 
-ENCODER_ENABLE = no
+ENCODER_ENABLE = yes
 RGBLIGHT_ENABLE = no
 BACKLIGHT_ENABLE = no
 RGB_MATRIX_ENABLE = no
@@ -79,5 +79,7 @@ SRC += $(USER_PATH)/extensions/adaptive_keys.c
 SRC += process_records.c
 
 CONSOLE_ENABLE   = yes  # Console for debug or keylogging.
+
+ENCODER_ENABLE = no
 
 SRC += $(USER_PATH)/lang/locales.c
