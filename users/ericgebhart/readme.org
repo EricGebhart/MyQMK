@@ -31,22 +31,22 @@ code for when a new layer is created. On verra.
 The org file name matches the folder name that it tangles its code to.
 
 The org files which contain this code.
-*** [[file:users/ericgebhart/introduction.org][introduction.org]]
+*** [[file:introduction.org][introduction.org]]
 This file, Some explanation of the parts and where you turn everything on and off.
-*** [[file:users/ericgebhart/config.org][config.org]]
+*** [[file:config.org][config.org]]
 This file, Some explanation of the parts and where you turn everything on and off.
-*** [[file:users/ericgebhart/lang.org][lang.org]]
+*** [[file:lang.org][lang.org]]
 This has some internals about keycodes and language, the structure of the layout wrappers and
 various other things that didn't belong here.
-*** [[file:users/ericgebhart/base_layers.org][base_layers.org]]
+*** [[file:/base_layers.org][base_layers.org]]
 This is where all the base layers live.  Dvorak, Beakl, Qwerty, Hands Down, Colemak,...
-*** [[file:users/ericgebhart/layers.org][layers.org]]
+*** [[file:layers.org][layers.org]]
 Layer definitions like keypads, symbols, navigation, accents, etc.
-*** [[file:users/ericgebhart/extensions.org][extensions.org]]
+*** [[file:extensions.org][extensions.org]]
 Code and definitions for extensions, key over-rides, combos, tap hold, smart locks, keycodes, etc.
-*** [[file:users/ericgebhart/keyboards.org][keyboards.org]]
+*** [[file:keyboards.org][keyboards.org]]
 The layout matrices and keyboard mappings.
-*** [[file:users/ericgebhart/mod_layers.org][mod_layers.org]]
+*** [[file:mod_layers.org][mod_layers.org]]
 Mod layer definitions to apply to the keymap given.
 *** [[file:users/ericgebhart/perimeter.org][perimeter.org]]
 Edge keys, thumb keys, number rows. Middle keys.  Not really in the org yet.
