@@ -1,4 +1,5 @@
 * Introduction
+
 I'm slowly pulling this all into org. I hope that improves the ability for people to
 explore and understand this.  The primary files here so far are /config.h/ and /rules.mk/.
 These are the traditional files for QMK configuration. There is movement to json, but
@@ -10,7 +11,8 @@ Essentially, if you can tangle this file from emacs you can treat it as a live c
 for your keyboard.  All the configuration flags are here along with explanations.
 
 I wanted to make it just a bunch of checkboxes, checkboxes are really nice in org.
-but that was more complex. So its source code inclusion with explanations along the way.
+but that was more complex. Getting it organized and together has to happen anyway.
+So its source code inclusion with explanations along the way.
 If there is nothing about configuration in a section I try to say so.
 
 I will try to go in an organized and logical manner so that a complete picture of
@@ -18,6 +20,50 @@ this configuration can be realized. However, if you have something specific, jum
 right there. It goes without saying this is best viewed in Emacs org mode, although
 github does a nice job of rendering them.  I usually fold all the bullets to start, if you
 are an org user you know these things already.
+
+
+** Current build:
+Its sort of important to know the gist of a qmk config, what was its intended target ?  What
+language is it on, how big is it,  what maps, features does it have. This helps some.
+
+#+begin_src shell
+grep '^#define' config.h
+#+end_src
+
+This current configuration, whatever it is,
+
+- Uses Us-Intl with dead keys for its language keycodes, ie. US_.
+  Can use en/KC, or fr/BP as well. Easy to add more.
+- Built for RP2040 - a liatris mcu. lots of memory.
+- Keyboard: My frankenkyria.  Reverse thumb 4th row, U-of-4 thumbs.
+- Too big for AVR,
+  - Should fit with with LTO, and no keylogger, adaptive keys.  YMMV.
+    Fitting firmware to an AVR is a personal journey.
+
+It does _not_ have rgb of any sort.  No memory or time.
+
+It has
+- Maps:
+  - Dvorak
+  - Hands down
+  - Maybe a Beakl,
+  - Some other trial map.
+  - Over 60 others to choose from.
+- Oled. - The information is nice to have.
+- A lot of combos
+- Mouse keys on.
+- Caps Word
+- Combo reference layers
+- Alternative shifted keys.
+- An accent key layer
+- Not dead keys
+- Adaptive keys from Hands Down
+- Tap-Hold/Linger keys - keys which send other things when held.
+- Smart lock layers
+- Smart lock mods
+- Oneshots, N-shots.  - Callum kind.
+- Heatmap keylogger - Precondition's
+
 
 ** C macro and the C pre-processor
 There is a lot of C macro here. It is not terribly bright, but it is amazingly flexible.

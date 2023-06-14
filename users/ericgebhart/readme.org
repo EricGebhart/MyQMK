@@ -5,6 +5,7 @@ I have begun using Emacs Org to manage this code.
 As such, this readme is still valid, but dated.  It does provide more
 information which may be useful.
 But current code and explanation is in the org files. Which are easy to read.
+I've put all the org files here at the top.
 
 I've been an emacs and org user for years, and I finally have decided
 to try literate programming with org and qmk. I like the organization
@@ -29,9 +30,6 @@ code for when a new layer is created. On verra.
 
 The org file name matches the folder name that it tangles its code to.
 
-** [[file:users/ericgebhart/readme.org][readme.org]]
-This is the original readme converted to org format.
-
 The org files which contain this code.
 *** [[file:introduction.org][introduction.org]]
 This file, Some explanation of the parts and where you turn everything on and off.
@@ -42,6 +40,8 @@ This has some internals about keycodes and language, the structure of the layout
 various other things that didn't belong here.
 *** [[file:users/ericgebhart/base_layers.org][base_layers.org]]
 This is where all the base layers live.  Dvorak, Beakl, Qwerty, Hands Down, Colemak,...
+*** [[file:users/ericgebhart/layers.org][layers.org]]
+Layer definitions like keypads, symbols, navigation, accents, etc.
 *** [[file:users/ericgebhart/extensions.org][extensions.org]]
 Code and definitions for extensions, key over-rides, combos, tap hold, smart locks, keycodes, etc.
 *** [[file:users/ericgebhart/keyboards.org][keyboards.org]]
@@ -50,11 +50,11 @@ The layout matrices and keyboard mappings.
 Mod layer definitions to apply to the keymap given.
 *** [[file:users/ericgebhart/perimeter.org][perimeter.org]]
 Edge keys, thumb keys, number rows. Middle keys.  Not really in the org yet.
+The code lives in =perimeter/=.
 
 *** The code not found in org.
 Not everything is in org. One of the motivations of using org is to automate some of these.
 - /oled//
-- layers/
 - =layer_names/=
 - perimeter/
 
