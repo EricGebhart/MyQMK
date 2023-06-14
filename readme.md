@@ -20,7 +20,7 @@ emacs and org. But the org files do create all the original source code
 files which was well organized to begin with. So its perfectly reasonable
 to ignore the org files if desired.
 
-The configuration is now kept in [config.org](users/ericgebhart/config.org) along with a fair amount
+The configuration is now kept in [config.org]("file://users/ericgebhart/config.org") along with a fair amount
 of explanation. config.org tangles its contents into config.h and
 rules.mk. 
 
@@ -34,36 +34,36 @@ code for when a new layer is created. On verra.
 The org file name matches the folder name that it tangles its code to.
 
 The original readme converted to org.
-  - [readme.org](file:users/ericgebhart/readme.org)
+  - [readme.org]("file:users/ericgebhart/readme.org")
 
 The org files which contain this code.
 
-  - [introduction.org](file://users/ericgebhart/introduction.org)
+  - [introduction.org]("file://users/ericgebhart/introduction.org")
    Some explanation of the parts and where you turn everything on and off.
 
-  - [config.org](file://users/ericgebhart/config.org)
+  - [config.org]("file://users/ericgebhart/config.org")
    The configuration of the firmware is here.
 
-  - [lang.org](file://users/ericgebhart/lang.org)
+  - [lang.org]("file://users/ericgebhart/lang.org")
 This has some internals about keycodes and language, 
 the structure of the layout wrappers and various other things that didn't belong here.
 
-  - [base_layers.org](file://users/ericgebhart/base_layers.org)
+  - [base_layers.org]("file://users/ericgebhart/base_layers.org")
 This is where all the base layers live.  Dvorak, Beakl, Qwerty, Hands Down, Colemak,...
 
-  - [layers.org](file://users/ericgebhart/layers.org)
+  - [layers.org]("file://users/ericgebhart/layers.org")
 Layer definitions like keypads, symbols, navigation, accents, etc.
 
-  - [extensions.org](file://users/ericgebhart/extensions.org)
+  - [extensions.org]("file://users/ericgebhart/extensions.org")
 Code and definitions for extensions, key over-rides, combos, tap hold, smart locks, keycodes, etc.
 
-  - [keyboards.org](file://users/ericgebhart/keyboards.org) 
+  - [keyboards.org]("file://users/ericgebhart/keyboards.org") 
   The layout matrices and keyboard mappings.
 
-  - [mod_layers.org](file://users/ericgebhart/mod_layers.org)
+  - [mod_layers.org]("file://users/ericgebhart/mod_layers.org")
 Mod layer definitions to apply to the keymap given.
 
-  -  [perimeter](file://users/ericgebhart/perimeter.org)
+  -  [perimeter]("file://users/ericgebhart/perimeter.org")
 Edge keys, thumb keys, number rows. Middle keys.  Not really in the org yet.
 The code lives in *perimeter/*.
 
