@@ -31,7 +31,7 @@ code for when a new layer is created. On verra.
 The org file name matches the folder name that it tangles its code to.
 
 The org files which contain this code.
-*** [[file:introduction.org][introduction.org]]
+*** [[file:users/ericgebhart/introduction.org][introduction.org]]
 This file, Some explanation of the parts and where you turn everything on and off.
 *** [[file:users/ericgebhart/config.org][config.org]]
 This file, Some explanation of the parts and where you turn everything on and off.
