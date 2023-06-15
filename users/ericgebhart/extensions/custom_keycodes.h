@@ -403,55 +403,6 @@ enum userspace_custom_keycodes {
 #define UC_CLUE UC(0x203D)
 
 
-////  TAP DANCE
-
-typedef struct {
-  bool is_press_action;
-  int state;
-} tdtap;
-
-enum {
-  SINGLE_TAP = 1,
-  SINGLE_HOLD = 2,
-  DOUBLE_TAP = 3,
-  DOUBLE_HOLD = 4,
-  DOUBLE_SINGLE_TAP = 5, //send two single taps
-  TRIPLE_TAP = 6,
-  TRIPLE_HOLD = 7
-};
-
-//Tap Dance Declarations
-enum {
-  TD_ESC_CAPS = 0,
-  TD_TAB_BKTAB = 1,
-  TD_MDIA_SYMB = 2,
-  TD_HOME_END = 3,
-  TD_XMONAD_ESC = 4,
-  TD_DEF_LAYER_SW = 5,
-  TD_DEF_OS_LAYER_SW = 6,
-  TD_MOUSE_BTNS = 7,
-  TD_DVORAK_BEPO = 8,
-  TD_UP_HOME = 9,
-  TD_DOWN_END = 10,
-  TD_RIGHT_TAB = 11,
-  TD_LEFT_BACKTAB = 12
-};
-
-
-// Tap dance
-#define TAB_BKTAB       TD(TD_TAB_BKTAB)  // Tab or backtab tapdance.
-#define MDIA_SYMB_KP_LAYERS TD(TD_MDIA_SYMB)  // MDIA, symb, keypad, layouts layer tapdance toggle.
-#define DEF_LAYER_SW    TD(TD_DEF_LAYER_SW)  // dvorak, dvorak_on_bepo, bepo default layer
-#define DEF_OS_LAYER_SW TD(TD_DEF_OS_LAYER_SW)  // dvorak, dvorak_on_bepo, bepo default layer
-#define HOME_END        TD(TD_HOME_END)  // home or end tapdance.
-#define XMONAD_ESC      TD(TD_XMONAD_ESC)  // Escape, dvorak, media or symb. - tap and hold tap dance. 1-4
-#define DVORAK_ET_BEPO  TD(TD_DVORAK_BEPO)  // Escape, dvorak, media or symb. - tap and hold tap dance. 1-4
-#define TDMOUSE_BTNS    TD(TD_MOUSE_BTNS)  // hmmm. 1-5
-#define RIGHT_TAB       TD(TD_RIGHT_TAB)   // Bad idea these 4. Maybe with good timing...
-#define LEFT_BACKTAB    TD(TD_LEFT_BACKTAB)
-#define UP_HOME         TD(TD_UP_HOME)
-#define DOWN_END        TD(TD_DOWN_END)  //  No! Down Down Not End....
-
 // HOME ROW LAYER TOGGLE (LT) and Shift.
 // both sides of the home row have  "shift, ___, media , symb, ___"  and  "___, symb, media, ___, shift".
 // so pinky fingers are shift when held and the index and second fingers are symbol and
@@ -508,11 +459,3 @@ enum {
 #define ____16_ ____15_, ____
 
 int on_qwerty(void);
-
-#ifdef TAP_DANCES_ENABLE
-int cur_dance (qk_tap_dance_state_t *state);
-
-//for the x tap dance. Put it here so it can be used in any keymap
-void x_finished (qk_tap_dance_state_t *state, void *user_data);
-void x_reset (qk_tap_dance_state_t *state, void *user_data);
-#endif

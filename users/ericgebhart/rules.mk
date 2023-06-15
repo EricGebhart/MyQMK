@@ -15,7 +15,7 @@ VPATH += $(USER_PATH)/lang
 VPATH += keyboards/gboards/g
 
 OLED_ENABLE = yes
-OLED_CUSTOM_ENABLE = yes
+OLED_CUSTOM_ENABLE =  yes
 
 # I should check if this is still needed. I dont remember.
 ifeq ($(strip $(OLED_CUSTOM_ENABLE)), yes)
@@ -61,7 +61,6 @@ SRC += $(USER_PATH)/extensions/extensions.c
 SRC += $(USER_PATH)/extensions/tap_hold.c
 SRC += $(USER_PATH)/extensions/accented_keys.c
 SRC += $(USER_PATH)/extensions/altlocal_keys.c
-SRC += $(USER_PATH)/extensions/tap_dances.c
 SRC += $(USER_PATH)/extensions/encoders.c
 SRC += $(USER_PATH)/extensions/swapper.c
 SRC += $(USER_PATH)/extensions/mod_lock.c

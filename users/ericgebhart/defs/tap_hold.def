@@ -6,6 +6,7 @@ TP_TPL(KC_CCCV, LCTL(KC_C), LCTL(KC_V))
 TP_TPL(KC_CTCN, LCTL(KC_T), LCTL(KC_N))
 // Close Tab-window/Quit
 TP_TPL(KC_CWCQ, LCTL(KC_W), LCTL(KC_Q))
+TP_TPL(HOME_END, KC_HOME, KC_END)
 // Xmonad scratch pads or desktop
 //TP_TPL(KC_XM_PORD, LGUI(KC_E), LGUI(KC_T))
 

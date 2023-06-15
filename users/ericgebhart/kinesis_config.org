@@ -304,8 +304,8 @@ on the stuff here in my configuration.
 
 *** Rules
 #+begin_src makefile :tangle rules.mk
-OLED_ENABLE = yes
-OLED_CUSTOM_ENABLE =  yes
+OLED_ENABLE = no
+OLED_CUSTOM_ENABLE = no
 
 # I should check if this is still needed. I dont remember.
 ifeq ($(strip $(OLED_CUSTOM_ENABLE)), yes)
@@ -318,7 +318,7 @@ Turn on/off this too.
 
 #+begin_src C :tangle config.h
 // OLED STUFF.
-#define OLED_CUSTOM_ENABLE // custom oled here.
+// #define OLED_CUSTOM_ENABLE // custom oled here.
 //#define OLED_LOGO_ENABLE // turn on/off the logo.
 #+end_src
 
@@ -495,8 +495,8 @@ This layout started with the ergodox, so it still accommodates everything a keyb
 
 // HD, HDA, HD_SIMPLE, TH_LTR, HD_DASH, KINESIS, KINESIS_LTR,
 // MIRYOKU_TR_LTR, MIRYOKU_LTR, ...
-#define THUMBS_ARE FKYRIA
-#define DEFAULT_THUMBS FKYRIA
+#define THUMBS_ARE KINESIS
+#define DEFAULT_THUMBS KINESIS
 #+end_src
 
 ** Alpha letter Thumb cluster.
@@ -507,7 +507,7 @@ to use. The letter used isn't important here. The key layout decides that for us
 
 #+begin_src C :tangle config.h
 // for the base layers which need a thumb cluster which takes a letter.
-#define HANDS_DOWN_LTR_THUMBS_ARE FKYRIA_LTR
+#define HANDS_DOWN_LTR_THUMBS_ARE KINESIS_LTR
 #define MALTRON_LTR_THUMBS_ARE TH_LTR
 #define RSTHD_LTR_THUMBS_ARE TH_LTR
 #define APTMAK_LTR_THUMBS_ARE TH_LTR
