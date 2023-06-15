@@ -1411,6 +1411,14 @@ bool process_alt_shift_user(uint16_t keycode, keyrecord_t *record) {
 #+end_src
 *** Combos
 **** Introduction
+This is just the combos macros from =keyboards/gboards/g/keymap_combos.h=.
+It has to be included in your keymap. I have my defs here.
+
+I use combo reference layers so my combos are defined positionally on the keyboard
+rather than the layout. I still use combos on the navigation and symbols layers where
+they are their own reference.
+
+
 **** The Defs
 #+begin_src C :tangle defs/combos.def
 // Per layer combo reference layers.
@@ -1607,7 +1615,8 @@ using Vlad/Precondition's heat map tool. The code for the logger came from
 The explanation and use of the heatmap is [here](https://precondition.github.io/qmk-heatmap)
 
 There is a script /listen_keylogger.sh/ which should be run to collect
-the keylogger data.
+the keylogger data. Combo data is also collected as recommended using
+the combo macro's inject.h mechanism.
 
 This does require *hid_listen* to be installed on the computer.
 On Arch linux this can by installed from the AUR with *yay -S hid_listen*
@@ -1615,11 +1624,10 @@ On Arch linux this can by installed from the AUR with *yay -S hid_listen*
 The output can also be seen just by using *qmk console*
 
 Note: _print.h_ is automatically included when *CONSOLE_ENABLE* is set. This allows
-for debug messages anwhere in the code base as needed to see what might be going
+for debug messages anywhere in the code base as needed to see what might be going
 on.
 
 This is vlad's/@precondition, keylogger heatmap code.
-my combo code has some keylogger in it as well.
 
 **** The Code
 
@@ -1965,7 +1973,7 @@ bool do_encoder_action(uint8_t index, bool clockwise, bool layer_actions) {
 
 #endif
 #+end_src
-*** key Codes
+*** Key Codes
 **** Introduction
 /custom_keycodes.h/ is the custom keycode enumeration.  Plus where you would put defines for
 shortcuts to more complex key codes.
@@ -4707,6 +4715,10 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 Tap hold creates keycodes which can be used to create a key which does
 one thing on tap, and another on long tap using a timer.
+
+This is not as fancy as linger keys, this does simple things.
+This set of macros just builds a switch statement for us using a few convenience functions
+that do the work.
 
 Tap hold currently has *tap_taplong* and *open_openclose* functions.
 These are in *tap_hold.c*, *tap_hold.h* and *tap_hold.defs*.
