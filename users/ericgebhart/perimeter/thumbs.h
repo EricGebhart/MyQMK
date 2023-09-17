@@ -39,13 +39,17 @@
 // top row of u.
 // define something as the top two thumb keys on each side.
 //
-#define ___4_THUMBS_fkyria_def___   BSPC_SYMB, GUI_ESC, ACCENTS_RALT, ENT_NAV
+#define ___4_THUMBS_fkyria_ltr_def___  \
+  BSPC_SYMB, GUI_ESC, ENT_NAV, ACCENTS_RALT
+#define ___4_THUMBS_fkyria_def___  \
+  SML_NAV, OSL_SYMB, OS_LSFT, KC_TAB
+
 // bottom row of u.  ie. middle. Plus the first key 4th row.
 // 6_urgo  Has arrows for the franken kyria.
 #define ___6_ERGO_THUMBS_fkyria___                              \
-  KC_RIGHT, BSPC_SYMB, GUI_ESC, ENT_NAV, SPC_TOPR, KC_UP
+  KC_RIGHT, GUI_ESC, BSPC_SYMB, SPC_TOPR, ENT_NAV,  KC_UP
 #define ___6_ERGO_THUMBS_fkyria_ltr___                          \
-  KC_RIGHT, TH_LTR_SYM, GUI_ESC, ENT_NAV, SPC_TOPR, KC_UP
+  KC_RIGHT, GUI_ESC, TH_LTR_SYM, SPC_TOPR, ENT_NAV, KC_UP
 
 // This ends up in 10_ergo_thumbs below. Cause thats what we need.
 // We need the left arrow and the down arrow on the inside, then whatever
@@ -53,11 +57,10 @@
 // Outer franken kyria thumbs.
 // SML_NAV KC_LEFT   6-ergo thumbs   KC_DOWN SML_KEYPAD.
 
+#define ___6_ERGO_THUMBS_layers___                              \
+  SML_NAV, BSPC_SYMB, ESC_TOPR, ENT_NAV, SPC_TOPR, ACCCENTS_RALT
 
-#define ___6_ERGO_THUMBS_layers___                                      \
-   SML_NAV, BSPC_SYMB, ESC_TOPR, ENT_NAV, SPC_TOPR, ACCCENTS_RALT
-
- // Transparent.
+// Transparent.
 #define ___6_ERGO_THUMBS_trns___ ___6___
 
 // A place to test stuff.
@@ -80,7 +83,6 @@
 
 #define ___6_ERGO_THUMBS_mod_layers_nav_kinesis_ltr___                  \
   BSPC_SYMB, TH_LTR_SYM, GUI_ESC,  ACCENTS_RALT, ENT_NAV, SPC_TOPR
-
 
 // for keymaps that need a letter on the thumb.
 #define ___6_ERGO_THUMBS_left_letter___                                 \
@@ -190,8 +192,15 @@
 #define ___12_DOX_ALL_THUMBS_BP___ ___12_DOX_ALL_THUMBS___
 
 #define ___10_ERGO_THUMBS_def___ _X_, _X_, ___6_ERGO_THUMBS___, _X_, _X_
+
+// #define ___4_THUMBS_EN___ ___4_THUMBS_def___
+// #define ___4_THUMBS_BP___ ___4_THUMBS_def___
+// #define ___10_ERGO_THUMBS_EN___ ___10_ERGO_THUMBS_def___
+// #define ___10_ERGO_THUMBS_BP___ ___10_ERGO_THUMBS_def___
+// #define SML_NAV KC_LEFT   6-ergo thumbs   KC_DOWN SML_KEYPAD.
+
 #define ___10_ERGO_THUMBS_fkyria_def___ OSL_ACCENTS, KC_LEFT,  \
-    ___6_ERGO_THUMBS___, KC_RIGHT, SML_KEYPAD
+    ___6_ERGO_THUMBS___, KC_DOWN, SML_KEYPAD
 
 #define ___4_THUMBS_fkyria_EN___ ___4_THUMBS_fkyria_def___
 #define ___4_THUMBS_fkyria_BP___ ___4_THUMBS_fkyria_def___

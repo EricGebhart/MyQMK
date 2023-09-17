@@ -66,8 +66,6 @@
 
 #define TAPPING_TOGGLE  2
 #define TAPPING_TERM    200
-// Alans tapping term.
-// #define TAPPING_TERM 170 // Mod TAP VS HOLD timing in milliseconds
 
 #define TAP_HOLD_TERM    200
 #define COMBO_MUST_HOLD_MODS
@@ -91,7 +89,7 @@
 #define DEFAULT_THUMBS FKYRIA
 
 // for the base layers which need a thumb cluster which takes a letter.
-#define HANDS_DOWN_LTR_THUMBS_ARE FKYRIA_LTR
+#define HANDS_DOWN_LTR_THUMBS_ARE KINESIS_LTR
 #define MALTRON_LTR_THUMBS_ARE TH_LTR
 #define RSTHD_LTR_THUMBS_ARE TH_LTR
 #define APTMAK_LTR_THUMBS_ARE TH_LTR

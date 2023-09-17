@@ -305,7 +305,7 @@ on the stuff here in my configuration.
 *** Rules
 #+begin_src makefile :tangle rules.mk
 OLED_ENABLE = yes
-OLED_CUSTOM_ENABLE =  yes
+OLED_CUSTOM_ENABLE = yes
 
 # I should check if this is still needed. I dont remember.
 ifeq ($(strip $(OLED_CUSTOM_ENABLE)), yes)
@@ -430,7 +430,7 @@ I also use emacs, xmonad, and vimb browser, so mice are not much needed.
 They always need tweaking. Most of these are the official QMK ones and
 the *Tap_hold_term* is for the Tap-hold extension. The defaults tend to work
 until they dont. Alan Reiser of hands down uses 170 as his tapping term
-and 170/5 for the Adaptive key term.
+and 170/5 for the Adaptive keys term.
 
 #+begin_src C :tangle config.h
 #undef TAPPING_TOGGLE
@@ -438,8 +438,6 @@ and 170/5 for the Adaptive key term.
 
 #define TAPPING_TOGGLE  2
 #define TAPPING_TERM    200
-// Alans tapping term.
-// #define TAPPING_TERM 170 // Mod TAP VS HOLD timing in milliseconds
 
 #define TAP_HOLD_TERM    200
 #define COMBO_MUST_HOLD_MODS
@@ -484,6 +482,8 @@ There are a growing number of thumb configurations, They can be chosen here.
 The part that changes, is the center 6 thumbs keys of a split. Like the corne.
 Bigger keyboards like the Kyria fill in around the core thumbs with more static choices.
 This layout started with the ergodox, so it still accommodates everything a keyboard might need.
+See _perimeter.org_ or _perimeter/thumbs.h_ for more.
+
 
 #+begin_src C :tangle config.h
 // Choose a thumb cluster.
@@ -507,7 +507,7 @@ to use. The letter used isn't important here. The key layout decides that for us
 
 #+begin_src C :tangle config.h
 // for the base layers which need a thumb cluster which takes a letter.
-#define HANDS_DOWN_LTR_THUMBS_ARE FKYRIA_LTR
+#define HANDS_DOWN_LTR_THUMBS_ARE KINESIS_LTR
 #define MALTRON_LTR_THUMBS_ARE TH_LTR
 #define RSTHD_LTR_THUMBS_ARE TH_LTR
 #define APTMAK_LTR_THUMBS_ARE TH_LTR
