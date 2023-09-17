@@ -15,7 +15,7 @@ VPATH += $(USER_PATH)/lang
 VPATH += keyboards/gboards/g
 
 OLED_ENABLE = yes
-OLED_CUSTOM_ENABLE =  yes
+OLED_CUSTOM_ENABLE = yes
 
 # I should check if this is still needed. I dont remember.
 ifeq ($(strip $(OLED_CUSTOM_ENABLE)), yes)
