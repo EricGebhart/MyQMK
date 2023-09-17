@@ -39,3 +39,12 @@ uint32_t layer_state_set_keymap (uint32_t state) {
 
 __attribute__ ((weak))
 void led_set_keymap(uint8_t usb_led) {}
+
+// turn off the power leds on the liatris.
+// #ifdef KEYBOARD_splitkb_kyria
+#if (CONVERT_TO == liatris)
+void keyboard_pre_init_user(void){
+  setPinOutput(24);
+  writePinHigh(24);
+}
+#endif
