@@ -1181,7 +1181,7 @@ Use the middle 4 keys from the 6 ergo thumbs setting for the four thumbs.
               K17, K18, K19, K1A, K1B,                                 \
                    K22, K23, K24,                                      \
                    K28, K29, K2A,                                      \
-              TMF(___6_ERGO_THUMBS___))            \
+              TMF(___6_ERGO_THUMBS___)            \
                                                                         )
 #+end_src
 
@@ -1194,7 +1194,7 @@ Use the middle 4 keys from the 6 ergo thumbs setting for the four thumbs.
 // Hummingbird
 #ifdef KEYBOARD_hummingbird
 #undef LAYOUT_VARG
-#define LAYOUT_VARG(...)     LAYOUT_hummingbird(__VA_ARGS__)
+#define LAYOUT_VARG(...)     LAYOUT_hbird(__VA_ARGS__)
 #define BASE Base_2_3x3_2_2
 #define BASEt6 None
 #define TRANS Transient_2_3x3_2_2
