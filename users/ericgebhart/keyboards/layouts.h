@@ -712,7 +712,7 @@
                                                                         \
               TMT(MOD_ROW(ROW3L)(K21, K22, K23, K24, K25)), \
               TMT(MOD_ROW(ROW3R)(K26, K27, K28, K29, K2A)),  \
-              TMF(___6_ERGO_THUMBS___)             \
+              ___4_ERGO_THUMBS___             \
                                                                         )
 
 #define Transient_2_3x3_2_2(                                              \
@@ -730,5 +730,5 @@
               K17, K18, K19, K1A, K1B,                                 \
                    K22, K23, K24,                                      \
                    K28, K29, K2A,                                      \
-              TMF(___6_ERGO_THUMBS___)            \
+              ___4_ERGO_THUMBS___            \
                                                                         )

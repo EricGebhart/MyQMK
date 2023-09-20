@@ -1157,7 +1157,7 @@ Use the middle 4 keys from the 6 ergo thumbs setting for the four thumbs.
                                                                         \
               TMT(MOD_ROW(ROW3L)(K21, K22, K23, K24, K25)), \
               TMT(MOD_ROW(ROW3R)(K26, K27, K28, K29, K2A)),  \
-              TMF(___6_ERGO_THUMBS___)             \
+              ___4_ERGO_THUMBS___             \
                                                                         )
 #+end_src
 
@@ -1181,7 +1181,7 @@ Use the middle 4 keys from the 6 ergo thumbs setting for the four thumbs.
               K17, K18, K19, K1A, K1B,                                 \
                    K22, K23, K24,                                      \
                    K28, K29, K2A,                                      \
-              TMF(___6_ERGO_THUMBS___)            \
+              ___4_ERGO_THUMBS___            \
                                                                         )
 #+end_src
 

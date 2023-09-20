@@ -47,9 +47,9 @@
 // bottom row of u.  ie. middle. Plus the first key 4th row.
 // 6_urgo  Has arrows for the franken kyria.
 #define ___6_ERGO_THUMBS_fkyria___                              \
-  KC_RIGHT, GUI_ESC, BSPC_SYMB, SPC_TOPR, ENT_NAV,  KC_UP
+  KC_RIGHT, BSPC_SYMB, GUI_ESC, ENT_NAV, SPC_TOPR,  KC_UP
 #define ___6_ERGO_THUMBS_fkyria_ltr___                          \
-  KC_RIGHT, GUI_ESC, TH_LTR_SYM, SPC_TOPR, ENT_NAV, KC_UP
+  KC_RIGHT, TH_LTR_SYM, GUI_ESC, ENT_NAV, SPC_TOPR, KC_UP
 
 // This ends up in 10_ergo_thumbs below. Cause thats what we need.
 // We need the left arrow and the down arrow on the inside, then whatever
@@ -178,6 +178,11 @@
 #define SYMB_THUMBS_EXT _symb___
 
 #define ___6_ERGO_THUMBS___ CAT2(___6_ERGO_THUMBS, THUMB_EXT)
+
+#define MIDDLE_FOUR_OF_SIX(K01, K02, K03, K04, K05, K06) \
+                         K02, K03, K04, K05
+#define MF(...) MIDDLE_FOUR_OF_SIX(__VA_ARGS__)
+#define ___4_ERGO_THUMBS___ MF(___6_ERGO_THUMBS___)
 
 /* // consolidated for kinesis, ergodox, and dactyl */
 /* //for the ergodox and kinesis. */
