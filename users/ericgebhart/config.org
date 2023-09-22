@@ -290,7 +290,7 @@ being applied. 5 into 5, 5 into 6, and 6 into 6 are possible.
  It can also be managed in a fixed way in the keyboard layout definition.
  I dont use number rows most of the time.
  Ergodox, kinesis, kyria, corne, rebound, viterbi, are all 5 to 6.
- I also have a kyria that is just 5.
+ I also have a kyria that is just 5.  Hummingbird, ferris and svalboard are all 5.
 
 #+begin_src C :tangle config.h
 #define BASE_COLS_IN_OUT 5_6 // 5, 5_6, 6
@@ -313,8 +313,8 @@ on the stuff here in my configuration.
 
 *** Rules
 #+begin_src makefile :tangle rules.mk
-OLED_ENABLE = no
-OLED_CUSTOM_ENABLE = no
+OLED_ENABLE = yes
+OLED_CUSTOM_ENABLE = yes
 
 # I should check if this is still needed. I dont remember.
 ifeq ($(strip $(OLED_CUSTOM_ENABLE)), yes)
@@ -327,7 +327,7 @@ Turn on/off this too.
 
 #+begin_src C :tangle config.h
 // OLED STUFF.
-// #define OLED_CUSTOM_ENABLE // custom oled here.
+#define OLED_CUSTOM_ENABLE // custom oled here.
 //#define OLED_LOGO_ENABLE // turn on/off the logo.
 #+end_src
 

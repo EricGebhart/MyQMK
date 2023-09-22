@@ -111,3 +111,25 @@
 #undef BASE_COLS_IN_OUT
 #define BASE_COLS_IN_OUT 5 // 5, 5_6, 6
 #endif
+
+// Ferris
+#ifdef KEYBOARD_ferris
+#undef LAYOUT_VARG
+#define LAYOUT_VARG(...)     LAYOUT_split_3x5_2(__VA_ARGS__)
+#define BASE Base_3x5_2
+#define BASEt6 None
+#define TRANS Transient_3x5_2
+#undef BASE_COLS_IN_OUT
+#define BASE_COLS_IN_OUT 5 // 5, 5_6, 6
+#endif
+
+// Slavboard
+#ifdef KEYBOARD_svalboard
+#undef LAYOUT_VARG
+#define LAYOUT_VARG(...)     SVALBOARD_LAYOUT_PRETTY(__VA_ARGS__)
+#define BASE Base_5x4_6
+#define BASEt6 None
+#define TRANS Transient_5x4_6
+#undef BASE_COLS_IN_OUT
+#define BASE_COLS_IN_OUT 5 // 5, 5_6, 6
+#endif

@@ -1157,7 +1157,7 @@ Use the middle 4 keys from the 6 ergo thumbs setting for the four thumbs.
                                                                         \
               TMT(MOD_ROW(ROW3L)(K21, K22, K23, K24, K25)), \
               TMT(MOD_ROW(ROW3R)(K26, K27, K28, K29, K2A)),  \
-              ___4_ERGO_THUMBS___             \
+              MAP_CHUNK(___4_ERGO_THUMBS)             \
                                                                         )
 #+end_src
 
@@ -1181,7 +1181,7 @@ Use the middle 4 keys from the 6 ergo thumbs setting for the four thumbs.
               K17, K18, K19, K1A, K1B,                                 \
                    K22, K23, K24,                                      \
                    K28, K29, K2A,                                      \
-              ___4_ERGO_THUMBS___            \
+              MAP_CHUNK(___4_ERGO_THUMBS)            \
                                                                         )
 #+end_src
 
@@ -1198,6 +1198,207 @@ Use the middle 4 keys from the 6 ergo thumbs setting for the four thumbs.
 #define BASE Base_2_3x3_2_2
 #define BASEt6 None
 #define TRANS Transient_2_3x3_2_2
+#undef BASE_COLS_IN_OUT
+#define BASE_COLS_IN_OUT 5 // 5, 5_6, 6
+#endif
+#+end_src
+** Ferris - 3x5 + 2 thumbs per side.
+*** Base layout for 3x10 input matrices.
+
+#+begin_src C :tangle keyboards/layouts.h
+// Take a 3x10 and trim it down to fit.
+// drop the bottom corners of each hand.
+// so inner index and bottom pinky are dropped/lost.
+
+// Take the middle thumbs out of the Ergo 6.
+
+#define Base_3x5_2(                                                   \
+                     K01, K02, K03, K04, K05, \
+                     K06, K07, K08, K09, K0A,                           \
+                     K11, K12, K13, K14, K15,                           \
+                     K16, K17, K18, K19, K1A,                           \
+                     K21, K22, K23, K24, K25,                           \
+                     K26, K27, K28, K29, K2A)                           \
+  LAYOUT_VARG(                                                          \
+              MOD_ROW(ROW1L)(K01, K02, K03, K04, K05),                  \
+              MOD_ROW(ROW1R)(K06, K07, K08, K09, K0A),                  \
+                                                                        \
+              MOD_ROW(ROW2L)(K11, K12, K13, K14, K15),                  \
+              MOD_ROW(ROW2R)(K16, K17, K18, K19, K1A),                  \
+                                                                        \
+              MOD_ROW(ROW3L)(K21, K22, K23, K24, K25), \
+              MOD_ROW(ROW3R)(K26, K27, K28, K29, K2A),  \
+              MAP_CHUNK(___4_ERGO_THUMBS)             \
+                                                                        )
+#+end_src
+
+*** No Mods transient layer layout for 3x10 input matrices.
+
+#+begin_src C :tangle keyboards/layouts.h
+
+
+#define Transient_3x5_2(                                              \
+                          K01, K02, K03, K04, K05,                      \
+                          K07, K08, K09, K0A, K0B,                      \
+                          K11, K12, K13, K14, K15,                      \
+                          K17, K18, K19, K1A, K1B,                      \
+                          K21, K22, K23, K24, K25,                      \
+                          K27, K28, K29, K2A, K2B                       \
+                                                                        ) \
+  LAYOUT_VARG(                                                          \
+              K01, K02, K03, K04, K05,                                 \
+              K07, K08, K09, K0A, K0B,                                 \
+              K11, K12, K13, K14, K15,                                 \
+              K17, K18, K19, K1A, K1B,                                 \
+              K21, K22, K23, K24, K25,                                 \
+              K27, K28, K29, K2A, K2B,                                 \
+              MAP_CHUNK(___4_ERGO_THUMBS)            \
+                                                                        )
+#+end_src
+
+
+*** Keyboards
+
+**** Ferris
+
+#+begin_src C :tangle keyboards/keyboards.h
+// Ferris
+#ifdef KEYBOARD_ferris
+#undef LAYOUT_VARG
+#define LAYOUT_VARG(...)     LAYOUT_split_3x5_2(__VA_ARGS__)
+#define BASE Base_3x5_2
+#define BASEt6 None
+#define TRANS Transient_3x5_2
+#undef BASE_COLS_IN_OUT
+#define BASE_COLS_IN_OUT 5 // 5, 5_6, 6
+#endif
+#+end_src
+
+
+** Svalboard - Data Hand.
+This maps a 3x10 matrix onto the 2 x 5x4 of the svalboard.
+The inner index column is mapped to the inner key of index, middle and ring fingers.
+The east west fillers put in the rest of the lateral keys.
+There is only one set of thumbs and east west fillers defined.
+
+*** Base layout for 3x10 input matrices.
+
+This is just rearranging the matrix so it can use a typical 3x10 layer specification.
+See the svalboard section in perimeter.org/thumbs.h.
+
+#+begin_src C :tangle keyboards/layouts.h
+// Take a 3x10 and rearrange it and fill in to fit.
+
+// Left to right.
+// top row,
+// home Row
+// bottom row
+// east west fillers.
+// thumbs.
+#define SVALBOARD_LAYOUT_PRETTY(                           \
+                     K01, K02, K03, K04, K05,              \
+                     K06, K07, K08, K09, K0A,              \
+\
+                     K11, K12, K13, K14, K15,              \
+                     K16, K17, K18, K19, K1A,              \
+\
+                     K21, K22, K23, K24, K25,              \
+                     K26, K27, K28, K29, K2A,              \
+\
+                     EW1, EW2, EW3, EW4, EW5,              \
+                     EW6, EW7, EW8, EW9, EWA,              \
+\
+                     TH1, TH2, TH3, TH4, TH5, TH6,         \
+                     TH7, TH8, TH9, THA, THB, THC          \
+                                                           )\
+  LAYOUT( \
+             /*Center   North  East   South    West*/  \
+        /*index*/ K17,  K07,   EW6,   K27,     K16,  \
+        /*R2*/    K18,  K08,   EW7,   K28,     K06,  \
+        /*R3*/    K19,  K09,   EW8,   K29,     K26,  \
+        /*pinky*/ K1A,  K0A,   EW9,   K2A,     EWA,  \
+  \
+        /*index*/ K14,  K04,   K15,   K24,     EW5,  \
+        /*L2*/    K13,  K03,   K05,   K23,     EW4,  \
+        /*L3*/    K12,  K02,   K25,   K22,     EW3,  \
+        /*pinky*/ K11,  K01,   EW2,   K21,     EW1,  \
+  \
+        /*      Down Inner Upper   Outer Upper  Outer Lower  Pushthrough*/  \
+        /*RT*/ THB,  TH9,  THC,    TH7,         THA,         TH8,  \
+        /*LT*/ TH5,  TH1,  TH4,    TH3,         TH6,         TH2  \
+    )
+
+#+end_src
+
+*** Base layout for 3x10 input matrices.
+
+#+begin_src C :tangle keyboards/layouts.h
+// Take a 3x10 and trim it down to fit.
+// drop the bottom corners of each hand.
+// so inner index and bottom pinky are dropped/lost.
+
+// Take the middle thumbs out of the Ergo 6.
+
+#define Base_5x4_6(                                                   \
+                     K01, K02, K03, K04, K05, \
+                     K06, K07, K08, K09, K0A,                           \
+                     K11, K12, K13, K14, K15,                           \
+                     K16, K17, K18, K19, K1A,                           \
+                     K21, K22, K23, K24, K25,                           \
+                     K26, K27, K28, K29, K2A)                           \
+  LAYOUT_VARG(                                                          \
+              MOD_ROW(ROW1L)(K01, K02, K03, K04, K05),                  \
+              MOD_ROW(ROW1R)(K06, K07, K08, K09, K0A),                  \
+                                                                        \
+              MOD_ROW(ROW2L)(K11, K12, K13, K14, K15),                  \
+              MOD_ROW(ROW2R)(K16, K17, K18, K19, K1A),                  \
+                                                                        \
+              MOD_ROW(ROW3L)(K21, K22, K23, K24, K25), \
+              MOD_ROW(ROW3R)(K26, K27, K28, K29, K2A),  \
+                                                                         \
+              SVALBOARD_EAST_WEST_FILLER,                              \
+              MAP_CHUNK(___SVALBOARD_THUMBS) \
+                                                                        )
+#+end_src
+
+*** No Mods transient layer layout for 3x10 input matrices.
+
+#+begin_src C :tangle keyboards/layouts.h
+
+
+#define Transient_5x4_6(                                              \
+                          K01, K02, K03, K04, K05,                      \
+                          K07, K08, K09, K0A, K0B,                      \
+                          K11, K12, K13, K14, K15,                      \
+                          K17, K18, K19, K1A, K1B,                      \
+                          K21, K22, K23, K24, K25,                      \
+                          K27, K28, K29, K2A, K2B                       \
+                                                                        ) \
+  LAYOUT_VARG(                                                          \
+              K01, K02, K03, K04, K05,                                 \
+              K07, K08, K09, K0A, K0B,                                 \
+              K11, K12, K13, K14, K15,                                 \
+              K17, K18, K19, K1A, K1B,                                 \
+              K21, K22, K23, K24, K24,                                 \
+              K27, K28, K29, K2A, K2B,                                     \
+              SVALBOARD_EAST_WEST_FILLER,   \
+              MAP_CHUNK(___SVALBOARD_THUMBS) \
+                                                                        )
+#+end_src
+
+
+*** Keyboards
+
+**** Slavboard
+
+#+begin_src C :tangle keyboards/keyboards.h
+// Slavboard
+#ifdef KEYBOARD_svalboard
+#undef LAYOUT_VARG
+#define LAYOUT_VARG(...)     SVALBOARD_LAYOUT_PRETTY(__VA_ARGS__)
+#define BASE Base_5x4_6
+#define BASEt6 None
+#define TRANS Transient_5x4_6
 #undef BASE_COLS_IN_OUT
 #define BASE_COLS_IN_OUT 5 // 5, 5_6, 6
 #endif
