@@ -104,7 +104,7 @@
 // Hummingbird
 #ifdef KEYBOARD_hummingbird
 #undef LAYOUT_VARG
-#define LAYOUT_VARG(...)     LAYOUT_hbird(__VA_ARGS__)
+#define LAYOUT_VARG(...)     LAYOUT(__VA_ARGS__)
 #define BASE Base_2_3x3_2_2
 #define BASEt6 None
 #define TRANS Transient_2_3x3_2_2
