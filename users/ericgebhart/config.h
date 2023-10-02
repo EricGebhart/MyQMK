@@ -37,10 +37,12 @@
 
 // OLED STUFF.
 #define OLED_CUSTOM_ENABLE // custom oled here.
-//#define OLED_LOGO_ENABLE // turn on/off the logo.
 
-#define KEYLOGGER_ENABLE // 1500 bytes, track and print keypress info to oled.
+//#define OLED_LOGO_ENABLE // turn on/off the logo.
 //#define SPLIT_LAYER_STATE_ENABLE  // to sync state between sides.
+
+#define OLED_DISPLAY_128X64
+#define KEYLOGGER_ENABLE // 1500 bytes, track and print keypress info to oled.
 
 // Sets good default for the speed of the mouse.
 #undef MOUSEKEY_INTERVAL
