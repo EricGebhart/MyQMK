@@ -1,7 +1,7 @@
 # Copyright 2023  EricaLina
 # This makefile has status and help, use:
 # make status
-# make help
+## make help
 
 # This Makefile prints lots of more readable stuff,
 # no need to see every echo.
@@ -47,43 +47,42 @@ testit:
 print-%  : ; @echo $* = $($*)
 
 $(user-keyboard-maps):
-	printf "\n\n-----------------------------------------------------\n"
+	printf "\n-----------------------------------------------------\n"
 	printf "Adding $(user-space) keymap for $@ \n"
 	mkdir -p $(keyboards-home)/$(@)/keymaps/$(user-space)
 	echo  '/* see users/$(user-space) */' > $(keyboards-home)/$(@)/keymaps/$(user-space)/keymap.c
-	printf "\n-----------------------------------------------------\n\n"
 
 
 # install the easy, sparce, external to qmk keyboard definitions
 # make hummingbird ...
 $(keyboards):
-	printf "\n\n-----------------------------------------------------\n"
+	printf "\n-----------------------------------------------------\n"
 	printf "Adding keyboard definition for $@ \n"
 	git clone $($@-repo) ../../keyboards/$@
 	printf "\n-----------------------------------------------------\n\n"
 	printf "Adding $(user-space) keymap for $@ \n"
 	mkdir -p $(keyboards-home)/$(@)/keymaps/$(user-space)
 	echo  '/* see users/$(user-space) */' > $(keyboards-home)/$(@)/keymaps/$(user-space)/keymap.c
-	printf "\n-----------------------------------------------------\n\n"
+	printf "\n-----------------------------------------------------\n"
 
 
 # install the svalboard keyboard definition
 $(extract-keyboards):
-	printf "\n\n-----------------------------------------------------\n"
+	printf "\n-----------------------------------------------------\n"
 	printf "Cloning into temporary QMK\n"
 	git clone $($@-repo) tmp_qmk
 	printf "Extracting keyboard definition for $@ \n"
 	cp -r tmp_qmk/keyboards/$@  ../../keyboards/
 	printf "Removing temporary QMK\n"
 	rm -rf tmp_qmk
-	printf "\n-----------------------------------------------------\n\n"
+	printf "\n-----------------------------------------------------\n"
 	printf "Adding $(user-space) keymap for $@ \n"
 	mkdir -p $(keyboards-home)/$(@)/keymaps/$(user-space)
 	echo  '/* see users/$(user-space) */' > $(keyboards-home)/$(@)/keymaps/$(user-space)/keymap.c
 	printf "\n-----------------------------------------------------\n\n"
 
 # install all keymap stubs for the user space.
-install-keymaps: $(keyboards) $(extract-keyboards) $(user-keyboard-maps)
+install-keymaps: $(user-keyboard-maps)
 install-keyboards: $(keyboards) $(extract-keyboards)
 install-all: $(keyboards) $(extract-keyboards) $(user-keyboard-maps)
 
@@ -95,19 +94,22 @@ status:
 	printf "\nSupported keyboard maps:\n"
 	printf "$(user-keyboard-maps)\n"
 	printf "\nAny of these may be used as a make target to install a keymap.\n"
-	printf "All of them may be installed with:\n make install-keymaps\n"
+	printf "\nAll of them may be installed with:\n make install-keymaps\n"
 
 	printf "\n-----------------------------------------------------\n"
 	printf "Keyboard definitions external to QMK:\n"
 	printf "These are repos with just the keyboard definition as it exists"
 	printf " in the keyboard directory in QMK.\n\n"
-	printf "Any of these may be used as a make target.\n\n"
+	printf "\nAny of these may be used as a make target to install a keyboard and map.\n"
 	printf "Keyboards: \n"
 	printf $(keyboards)
 
 	printf "\n\nThese keyboards are part of a full qmk repo and will be extracted"
 	printf "into this install.\n"
+	printf "Keyboards which must be extracted: \n"
 	printf $(extract-keyboards)
+	printf "\n\nAll of these may be installed with:\n make install-keyboards\n"
+
 	printf "\n-----------------------------------------------------\n"
 
 help: status
