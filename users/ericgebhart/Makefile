@@ -1,7 +1,7 @@
 # Copyright 2023  EricaLina
 # This makefile has status and help, use:
 # make status
-## make help
+# make help
 
 # This Makefile prints lots of more readable stuff,
 # no need to see every echo.
